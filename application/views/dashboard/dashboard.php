@@ -67,3 +67,6 @@
         <!-- /.row -->
       </div>
     </section>
+
+
+    <img src="<?php echo base_url()."assets/";?>dist/img/logo.jpg" class="img-fluid img-thumbnail" alt="Responsive image">
