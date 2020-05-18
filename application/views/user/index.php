@@ -46,98 +46,14 @@
                                     <td>ade.kasep@gmail.com</td>
                                     <td>
                                         <div class="btn-group">
-                                            <button href="#modal-lg" type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-lg" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-trash-alt" data-tolltip="tooltip" data-placement="top" title="Delete"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>88273</td>
-                                    <td>Ade Kasep
-                                    </td>
-                                    <td>08777263516</td>
-                                    <td>ade.kasep@gmail.com</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button href="#modal-lg" type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-lg" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-trash-alt" data-tolltip="tooltip" data-placement="top" title="Delete"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>88273</td>
-                                    <td>Ade Kasep
-                                    </td>
-                                    <td>08777263516</td>
-                                    <td>ade.kasep@gmail.com</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button href="#modal-lg" type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-lg" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-trash-alt" data-tolltip="tooltip" data-placement="top" title="Delete"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>88273</td>
-                                    <td>Ade Kasep
-                                    </td>
-                                    <td>08777263516</td>
-                                    <td>ade.kasep@gmail.com</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button href="#modal-lg" type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-lg" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-trash-alt" data-tolltip="tooltip" data-placement="top" title="Delete"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>88273</td>
-                                    <td>Ade Kasep
-                                    </td>
-                                    <td>08777263516</td>
-                                    <td>ade.kasep@gmail.com</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button href="#modal-lg" type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-lg" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-trash-alt" data-tolltip="tooltip" data-placement="top" title="Delete"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>88273</td>
-                                    <td>Ade Kasep
-                                    </td>
-                                    <td>08777263516</td>
-                                    <td>ade.kasep@gmail.com</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button href="#modal-lg" type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-lg" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-trash-alt" data-tolltip="tooltip" data-placement="top" title="Delete"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>88273</td>
-                                    <td>Ade Kasep
-                                    </td>
-                                    <td>08777263516</td>
-                                    <td>ade.kasep@gmail.com</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button href="#modal-lg" type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-lg" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-trash-alt" data-tolltip="tooltip" data-placement="top" title="Delete"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
+                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
 
-                                </tfoot>
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
+
+                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
                         </table>
                     </div>
                     <!-- /.card-body -->
@@ -195,21 +111,60 @@
     </div>
 </section>
 
-<div class="modal fade" id="modal-lg">
+
+<!-- modal-detail -->
+<div class="modal fade" id="modal-detail">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Detail User</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <div class="card card-warning card-outline">
+                <div class="card-body">
+                    <div class="text-center">
+                        <img class="profile-user-img img-fluid img-circle" src="https://avatars1.githubusercontent.com/u/19869153?s=460&u=c3eb07e1bfd064b1b8761816324c53a56e9792d7&v=4" alt="User profile picture">
+                    </div>
+
+                    <h3 class="profile-username text-center">Ade Kasep</h3>
+
+                    <p class="text-muted text-center">Marketing</p>
+
+                    <ul class="list-group list-group-unbordered mb-3">
+                        <li class="list-group-item">
+                            <b>NIK</b> <a class="float-right">46899</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Telepon</b> <a class="float-right">0877563435</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Email</b> <a class="float-right">ade.kasep@gmail.com</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Alamat</b> <a class="float-right">Majalengka City</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="modal-body">
-                <p>One fine body&hellip;</p>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+</div>
+<!-- /.modal -->
+
+
+<!-- modal-delete -->
+<div class="modal fade" id="modal-delete">
+    <div class="modal-dialog">
+        <div class="modal-content bg-danger">
+            <div class="modal-body text-center">
+
+                <b class="h4">Apakah anda yakin?</b>
+                <p>data akan dihapus permanen!</p>
             </div>
             <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-outline-light">Hapus</button>
             </div>
         </div>
         <!-- /.modal-content -->
@@ -223,7 +178,9 @@
 <script>
     $(document).ready(function() {
         $('#TabelUser').DataTable();
-        $('[data-tolltip="tooltip"]').tooltip()
+        $('[data-tolltip="tooltip"]').tooltip({
+            trigger: "hover"
+        })
 
     });
 </script>

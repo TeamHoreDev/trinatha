@@ -68,7 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="<?php echo base_url('dashboard') ?>" class="nav-link">
+              <a href="<?php echo base_url('dashboard') ?>" class="nav-link <?= $this->uri->segment(1) == 'dashboard' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -121,8 +121,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </li>
               </ul>
             </li>
-            <li class="nav-item has-treeview menu-close">
-              <a href="#" class="nav-link">
+            <li class="nav-item has-treeview <?= $this->uri->segment(1) == 'user' ? 'menu-open' : '' ?>">
+              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-database"></i>
                 <p>
                   Data Master
@@ -137,7 +137,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('user') ?>" class="nav-link">
+                  <a href="<?= base_url('user') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
                     <i class="fa fa-users nav-icon"></i>
                     <p>Master User</p>
                   </a>
