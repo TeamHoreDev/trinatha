@@ -3,12 +3,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Master Alat</h1>
+                <h1>Jam Kerja Alat</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Data Master</a></li>
-                    <li class="breadcrumb-item active">Master Alat</li>
+                    <li class="breadcrumb-item"><a href="#">Transaksi</a></li>
+                    <li class="breadcrumb-item active">Jam Kerja Alat</li>
                 </ol>
             </div>
         </div>
@@ -22,7 +22,7 @@
             <div class="col-md-8">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">List Alat</h3>
+                        <h3 class="card-title">Jam Kerja Alat</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- card-body -->
@@ -30,19 +30,30 @@
                         <table id="TabelUser" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
+                                    <th>Tanggal</th>
                                     <th>Kode Alat</th>
                                     <th>Nama Alat</th>
+                                    <th>Operator</th>
+                                    <th>Jam Mulai</th>
+                                    <th>Jam Selesai</th>
+                                    <th>Total Jam Kerja</th>
+                                    <th>Remaks</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>88273</td>
-                                    <td>Ade Kasep
-                                    </td>
+                                    <td>17/07/1996</td>
+                                    <td>001</td>
+                                    <td>Dump Truck</td>
+                                    <td>Sigit Ridwiyanto</td>
+                                    <td>08:00</td>
+                                    <td>17:00</td>
+                                    <td>9 Jam</td>
+                                    <td>Tunnel</td>
                                     <td>
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top"
+
                                             <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
 
                                             <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
@@ -53,7 +64,7 @@
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <small class="text-muted float-right">Data alat pada tanggal 09/05/2020</small>
+                        <small class="text-muted float-right">Jam Kerja Alat pada tanggal 09/05/2020</small>
                     </div>
                 </div>
                 <!-- /.card -->
@@ -62,12 +73,16 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Daftar Alat</h3>
+                        <h3 class="card-title">Jam Kerja Alat</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
                     <form role="form">
                         <div class="card-body">
+                            <div class="form-group">
+                                <label for="Tanggal">Tanggal</label>
+                                <input type="date" class="form-control" id="Tanggal" name="Tanggal" placeholder="Enter Tanggal">
+                            </div>
                             <div class="form-group">
                                 <label for="KodeAlat">Kode Alat</label>
                                 <input type="text" class="form-control" id="KodeAlat" name="KodeAlat" placeholder="Enter Kode Alat">
@@ -76,12 +91,27 @@
                                 <label for="NamaAlat">Nama Alat</label>
                                 <input type="text" class="form-control" id="NamaAlat" name="NamaAlat" placeholder="Enter Nama Alat">
                             </div>
-                            
+                            <div class="form-group">
+                                <label for="Operator">Operator</label>
+                                <input type="text" class="form-control" id="Operator" name="Operator" placeholder="Enter Operator">
+                            </div>
+                            <div class="form-group">
+                                <label for="JamMulai">Jam Mulai</label>
+                                <input type="time" class="form-control" id="JamMulai" placeholder="Enter Jam Mulai">
+                            </div>
+                            <div class="form-group">
+                                <label for="JamSelesai">Jam Selesai</label>
+                                <input type="time" class="form-control" id="JamSelesai" placeholder="Enter Jam Selesai">
+                            </div>
+                            <div class="form-group">
+                                <label for="Remaks">Remaks</label>
+                                <textarea class="form-control" id="Remaks" placeholder="Enter Remaks"></textarea> 
+                            </div>
 
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary float-right">Daftar</button>
+                            <button type="submit" class="btn btn-primary float-right">Simpan</button>
                         </div>
                     </form>
                 </div>
@@ -93,6 +123,9 @@
 
 
 
+
+
+<!-- modal-delete -->
 <div class="modal fade" id="modal-delete">
     <div class="modal-dialog">
         <div class="modal-content bg-danger">
