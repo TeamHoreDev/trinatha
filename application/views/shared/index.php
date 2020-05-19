@@ -131,7 +131,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="<?= base_url('alat') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'alat' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Master Alat</p>
                   </a>
