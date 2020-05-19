@@ -7,4 +7,4 @@ class Dashboard extends CI_Controller {
 	{
 		$this->template->load('shared/index','dashboard/dashboard');
 	}
-}
+}                     
