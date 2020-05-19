@@ -75,8 +75,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="nav-item has-treeview menu-close">
-              <a href="#" class="nav-link">
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'solar' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Transaksi
@@ -85,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= base_url('solar') ?>" class="nav-link">
+                  <a href="<?= base_url('solar') ?>" class="nav-link <?= $this->uri->segment(1) == 'solar' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Solar</p>
                   </a>
@@ -121,7 +121,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </li>
               </ul>
             </li>
-            <li class="nav-item has-treeview <?= $this->uri->segment(1) == 'user' ? 'menu-open' : '' ?>">
+            <li class="nav-item has-treeview">
               <a href="#" class="nav-link <?= $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-database"></i>
                 <p>
@@ -208,6 +208,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="<?= base_url("assets/plugins/bootstrap/js/bootstrap.bundle.min.js") ?>"></script>
   <!-- AdminLTE App -->
   <script src="<?= base_url("assets/dist/js/adminlte.min.js") ?>"></script>
+  <script src="<?= base_url("assests/plugins/jquery-knob/jquery.knob.min.js") ?>"></script>
 </body>
 
 </html>
