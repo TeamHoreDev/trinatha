@@ -86,13 +86,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="<?= base_url('solar') ?>" class="nav-link">
-                    <i class="fa fa-filter nav-icon"></i>
+                    <i class="far fa-circle nav-icon"></i>
                     <p>Solar</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link">
-                    <i class="far fa-clock nav-icon"></i>
+                    <i class="far fa-circle nav-icon"></i>
                     <p>Jam Kerja Alat</p>
                   </a>
                 </li>
@@ -109,13 +109,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="#" class="nav-link">
-                    <i class="far fa-clock nav-icon"></i>
+                    <i class="far fa-circle nav-icon"></i>
                     <p>Jam Kerja Alat</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link">
-                    <i class="fa fa-tint nav-icon"></i>
+                    <i class="far fa-circle nav-icon"></i>
                     <p>Stok Solar</p>
                   </a>
                 </li>
@@ -132,13 +132,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <ul class="nav nav-treeview">
                 <li class="nav-item">
                   <a href="#" class="nav-link">
-                    <i class="fa fa-tasks nav-icon"></i>
+                    <i class="far fa-circle nav-icon"></i>
                     <p>Master Alat</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= base_url('user') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
-                    <i class="fa fa-users nav-icon"></i>
+                    <i class="far fa-circle nav-icon"></i>
                     <p>Master User</p>
                   </a>
                 </li>
