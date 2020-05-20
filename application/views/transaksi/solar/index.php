@@ -78,6 +78,10 @@
                           <div class="card-body">
                             <div class="row">
                               <div class="form-group col-6">
+                                <label for="NoPengambilan">No Pengambilan</label>
+                                <input type="text" class="form-control" id="NoPengambilan" name="NoPengambilan" placeholder="Enter No Pengambilan">
+                              </div>
+                              <div class="form-group col-6">
                                 <label for="Tanggal">Tanggal</label>
                                 <input type="date" class="form-control" id="Tanggal" name="Tanggal" placeholder="Enter Tanggal">
                               </div>
@@ -92,7 +96,7 @@
                                 <input type="text" class="form-control" id="Quantity" name="Quantity" placeholder="Enter Quantity">
                               </div>
                               <div class="form-group col-6">
-                                <label for="Operator">PIC</label>
+                                <label for="Operator">Operator</label>
                                 <input type="text" class="form-control" id="Operator" name="Operator" placeholder="Enter Operator">
                               </div>
                             </div>
@@ -121,6 +125,7 @@
                       <table id="TabelUser" class="table table-bordered table-striped">
                         <thead>
                           <tr>
+                            <th>No Pengambilan</th>
                             <th>Tanggal</th>
                             <th>Kode Alat</th>
                             <th>Operator</th>
@@ -130,6 +135,7 @@
                         </thead>
                         <tbody>
                           <tr>
+                            <td>001</td>
                             <td>28/05/2020</td>
                             <td>MX412</td>
                             <td>Ujang</td>
@@ -200,6 +206,10 @@
                                 <input type="date" class="form-control" id="Tanggal" name="Tanggal" placeholder="Enter Tanggal">
                               </div>
                               <div class="form-group col-6">
+                                <label for="NoSuratJalan">No Surat Jalan</label>
+                                <input type="text" class="form-control" id="NoSuratJalan" name="NoSuratJalan" placeholder="Enter No Surat Jalan">
+                              </div>
+                              <div class="form-group col-6">
                                 <label for="NamaVendor">Nama Vendor</label>
                                 <input type="text" class="form-control" id="NamaVendor" name="NamaVendor" placeholder="Enter Nama Vendor">
                               </div>
@@ -244,6 +254,7 @@
                         <thead>
                           <tr>
                             <th>Tanggal</th>
+                            <th>No Surat Jalan</th>
                             <th>Nama Vendor</th>
                             <th>Quantity</th>
                             <th>Tangki</th>
@@ -253,6 +264,7 @@
                         <tbody>
                           <tr>
                             <td>28/05/2020</td>
+                            <td>001</td>
                             <td>Takagi</td>
                             <td>500</td>
                             <td>5000L</td>
@@ -322,8 +334,12 @@
                                 <input type="date" class="form-control" id="Tanggal" name="Tanggal" placeholder="Enter Tanggal">
                               </div>
                               <div class="form-group col-6">
-                                <label for="KodeUnit">Kode Alat</label>
-                                <input type="text" class="form-control" id="KodeUnit" name="KodeUnit" placeholder="Enter Kode Unit">
+                                <label for="NoPeminjaman">No Peminjaman</label>
+                                <input type="text" class="form-control" id="NoPeminjaman" name="NoPeminjaman" placeholder="Enter No Peminjaman">
+                              </div>
+                              <div class="form-group col-6">
+                                <label for="NamaVendor">Nama Vendor</label>
+                                <input type="text" class="form-control" id="NamaVendor" name="NamaVendor" placeholder="Enter Nama Vendor">
                               </div>
                             </div>
                             <div class="row">
@@ -332,8 +348,12 @@
                                 <input type="text" class="form-control" id="Quantity" name="Quantity" placeholder="Enter Quantity">
                               </div>
                               <div class="form-group col-6">
-                                <label for="Operator">PIC</label>
-                                <input type="text" class="form-control" id="Operator" name="Operator" placeholder="Enter Operator">
+                                <label for="Tangki">Tangki</label>
+                                <select class="custom-select" id="Tangki">
+                                  <option selected>Pilih Tangki</option>
+                                  <option value="1">Tangki 5000L</option>
+                                  <option value="2">Tangki 8000L</option>
+                                </select>
                               </div>
                             </div>
                           </div>
@@ -362,9 +382,11 @@
                         <thead>
                           <tr>
                             <th>Tanggal</th>
-                            <th>Kode Alat</th>
-                            <th>Operator</th>
+                            <th>No Peminjaman</th>
+                            <th>Nama Vendor</th>
                             <th>Quantity</th>
+                            <th>Tanki</th>
+                            <th>Status Pengembalian</th>
                             <th style="width: 10px">Modify</th>
                           </tr>
                         </thead>
@@ -372,8 +394,10 @@
                           <tr>
                             <td>28/05/2020</td>
                             <td>MX412</td>
-                            <td>Ujang</td>
+                            <td>Axata</td>
                             <td>290</td>
+                            <td>8000L</td>
+                            <td>Ya</td>
                             <td>
                               <div class="btn-group">
                                 <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
@@ -437,12 +461,16 @@
                           <div class="card-body">
                             <div class="row">
                               <div class="form-group col-6">
-                                <label for="Tanggal">Tanggal</label>
-                                <input type="date" class="form-control" id="Tanggal" name="Tanggal" placeholder="Enter Tanggal">
+                                <label for="NoPeminjaman">No Peminjaman</label>
+                                <input type="text" class="form-control" id="NoPeminjaman" name="NoPeminjaman" placeholder="Enter No Peminjaman">
                               </div>
                               <div class="form-group col-6">
-                                <label for="KodeUnit">Kode Alat</label>
-                                <input type="text" class="form-control" id="KodeUnit" name="KodeUnit" placeholder="Enter Kode Unit">
+                                <label for="NoPengembalian">No Pengembalian</label>
+                                <input type="text" class="form-control" id="NoPengembalian" name="NoPengembalian" placeholder="Enter No pengembalian">
+                              </div>
+                              <div class="form-group col-6">
+                                <label for="Tanggal">Tanggal</label>
+                                <input type="date" class="form-control" id="Tanggal" name="Tanggal" placeholder="Enter Tanggal">
                               </div>
                             </div>
                             <div class="row">
@@ -451,8 +479,12 @@
                                 <input type="text" class="form-control" id="Quantity" name="Quantity" placeholder="Enter Quantity">
                               </div>
                               <div class="form-group col-6">
-                                <label for="Operator">PIC</label>
-                                <input type="text" class="form-control" id="Operator" name="Operator" placeholder="Enter Operator">
+                                <label for="Tangki">Tangki</label>
+                                <select class="custom-select" id="Tangki">
+                                  <option selected>Pilih Tangki</option>
+                                  <option value="1">Tangki 5000L</option>
+                                  <option value="2">Tangki 8000L</option>
+                                </select>
                               </div>
                             </div>
                           </div>
@@ -480,19 +512,21 @@
                       <table id="TabelUser" class="table table-bordered table-striped">
                         <thead>
                           <tr>
+                            <th>No Peminjaman</th>
+                            <TH>No Pengembalian</TH>
                             <th>Tanggal</th>
-                            <th>Kode Alat</th>
-                            <th>Operator</th>
                             <th>Quantity</th>
+                            <th>Tanki</th>
                             <th style="width: 10px">Modify</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
+                            <td>001</td>
+                            <td>555</td>
                             <td>28/05/2020</td>
-                            <td>MX412</td>
-                            <td>Ujang</td>
                             <td>290</td>
+                            <td>8000L</td>
                             <td>
                               <div class="btn-group">
                                 <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
