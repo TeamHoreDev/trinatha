@@ -9,10 +9,9 @@ class User extends CI_Controller
         parent::__construct();
     }
 
-
     public function index()
     {
-        $this->template->load('shared/index', 'user/index');
+        $this->template->load('shared/index', 'master/user/index');
     }
 }
 

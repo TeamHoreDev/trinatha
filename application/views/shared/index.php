@@ -76,7 +76,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item has-treeview">
-              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'solar' ? 'active' : '' ?>">
+              <a href="#" class="nav-link <?=$this->uri->segment(1) == 'solar' ? 'active' : '' ?> <?= $this->uri->segment(1) == 'jam_kerja_alat' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Transaksi
