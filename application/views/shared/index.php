@@ -76,7 +76,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item has-treeview">
-              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'solar' ? 'active' : '' ?>">
+              <a href="#" class="nav-link <?=$this->uri->segment(1) == 'solar' ? 'active' : '' ?> <?= $this->uri->segment(1) == 'jam_kerja_alat' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Transaksi
@@ -114,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="<?= base_url('stoksolar') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Stok Solar</p>
                   </a>
@@ -122,7 +122,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </ul>
             </li>
             <li class="nav-item has-treeview">
-              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
+              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'user' ? 'active' : '' ?><?= $this->uri->segment(1) == 'alat' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-database"></i>
                 <p>
                   Data Master

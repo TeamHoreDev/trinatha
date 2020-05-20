@@ -12,7 +12,7 @@ class Alat extends CI_Controller
 
     public function index()
     {
-        $this->template->load('shared/index', 'alat/index');
+        $this->template->load('shared/index', 'master/alat/index');
     }
 }
 
