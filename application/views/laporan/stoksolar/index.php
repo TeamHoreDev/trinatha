@@ -23,34 +23,36 @@
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Stok Solar</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Export" data-widget="chat-pane-toggle">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+                        </div>
                     </div>
                     <!-- /.card-header -->
                     <!-- card-body -->
                     <div class="card-body">
-                        <div class="row">
-                        <div class="alert alert-success col-sm-11" role="alert">
-                          Laporan Stok Solar <b>Tangki 5000L</b> mulai bulan <b>Januari</b> sampai <b>Februari</b>
-                      </div>
-                      <right><button type="button" class="btn btn-primary btn-lg"><i class="nav-icon fas fa-download"></i></button></right>
-                  </div>
-                      <table id="TabelUser" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th>Kode Transaksi</th>
-                                <th>Tangki</th>
-                                <th>Tanggal</th>
-                                <th>Kategori</th>
-                                <th>Stok</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1224</td>
-                                <td>5000L</td>
-                                <td>17/07/1996</td>
-                                <td>Pengambilan</td>
-                                <td>2000</td>
-                            </tr>
+                        <div class="alert alert-secondary" role="alert">
+                            Laporan Stok Solar <b>Tangki 5000L</b> mulai bulan <b>Januari</b> sampai <b>Februari</b>
+                        </div>
+                        <table id="TabelUser" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Kode Transaksi</th>
+                                    <th>Tangki</th>
+                                    <th>Tanggal</th>
+                                    <th>Kategori</th>
+                                    <th>Stok</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1224</td>
+                                    <td>5000L</td>
+                                    <td>17/07/1996</td>
+                                    <td>Pengambilan</td>
+                                    <td>2000</td>
+                                </tr>
                         </table>
                     </div>
                     <!-- /.card-body -->
@@ -71,62 +73,62 @@
                     <form role="form">
                         <div class="card-body">
                             <div class="row">
-                              <div class="form-group col-12">
-                                <label for="Tangki">Tangki</label>
-                                <select class="custom-select" id="Tangki">
-                                  <option selected>Pilih Tangki</option>
-                                  <option value="1">Tangki 5000L</option>
-                                  <option value="2">Tangki 8000L</option>
-                              </select>
-                          </div>
-                          <div class="form-group col-6">
-                            <label for="BulanAwal">Bulan Awal</label>
-                            <select class="custom-select" id="BulanAwal">
-                              <option selected>Pilih Bulan Awal</option>
-                              <option value="1">Januari</option>
-                              <option value="2">Februari</option>
-                              <option value="2">Maret</option>
-                              <option value="2">April</option>
-                              <option value="2">Mei</option>
-                              <option value="2">Juni</option>
-                              <option value="2">Juli</option>
-                              <option value="2">Agustus</option>
-                              <option value="2">September</option>
-                              <option value="2">Oktober</option>
-                              <option value="2">November</option>
-                              <option value="2">Desember</option>
-                          </select>
-                      </div>
-                      <div class="form-group col-6">
-                        <label for="BulanAkhir">Bulan Akhir</label>
-                        <select class="custom-select" id="BulanAkhir">
-                          <option selected>Pilih Bulan Akhir</option>
-                          <option value="1">Januari</option>
-                          <option value="2">Februari</option>
-                          <option value="2">Maret</option>
-                          <option value="2">April</option>
-                          <option value="2">Mei</option>
-                          <option value="2">Juni</option>
-                          <option value="2">Juli</option>
-                          <option value="2">Agustus</option>
-                          <option value="2">September</option>
-                          <option value="2">Oktober</option>
-                          <option value="2">November</option>
-                          <option value="2">Desember</option>
-                      </select>
-                  </div>
-
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary float-right">Submit</button>
+                                <div class="form-group col-12">
+                                    <label for="Tangki">Tangki</label>
+                                    <select class="custom-select" id="Tangki">
+                                        <option selected>Pilih Tangki</option>
+                                        <option value="1">Tangki 5000L</option>
+                                        <option value="2">Tangki 8000L</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="BulanAwal">Bulan Awal</label>
+                                    <select class="custom-select" id="BulanAwal">
+                                        <option selected>Pilih Bulan Awal</option>
+                                        <option value="1">Januari</option>
+                                        <option value="2">Februari</option>
+                                        <option value="2">Maret</option>
+                                        <option value="2">April</option>
+                                        <option value="2">Mei</option>
+                                        <option value="2">Juni</option>
+                                        <option value="2">Juli</option>
+                                        <option value="2">Agustus</option>
+                                        <option value="2">September</option>
+                                        <option value="2">Oktober</option>
+                                        <option value="2">November</option>
+                                        <option value="2">Desember</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-6">
+                                    <label for="BulanAkhir">Bulan Akhir</label>
+                                    <select class="custom-select" id="BulanAkhir">
+                                        <option selected>Pilih Bulan Akhir</option>
+                                        <option value="1">Januari</option>
+                                        <option value="2">Februari</option>
+                                        <option value="2">Maret</option>
+                                        <option value="2">April</option>
+                                        <option value="2">Mei</option>
+                                        <option value="2">Juni</option>
+                                        <option value="2">Juli</option>
+                                        <option value="2">Agustus</option>
+                                        <option value="2">September</option>
+                                        <option value="2">Oktober</option>
+                                        <option value="2">November</option>
+                                        <option value="2">Desember</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary float-right">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
             </div>
-        </form>
+        </div>
     </div>
-    <!-- /.card -->
-</div>
-</div>
-</div>
 </section>
 
 

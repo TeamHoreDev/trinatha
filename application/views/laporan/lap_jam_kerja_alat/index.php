@@ -23,10 +23,18 @@
                 <div class="card card-primary">
                     <div class="card-header">
                         <h3 class="card-title">Jam Kerja Alat</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-default btn-sm" data-toggle="tooltip" title="Export" data-widget="chat-pane-toggle">
+                                <i class="fas fa-download"></i> Export
+                            </button>
+                        </div>
                     </div>
                     <!-- /.card-header -->
                     <!-- card-body -->
                     <div class="card-body">
+                        <div class="alert alert-secondary" role="alert">
+                            Laporan <b>Jam Kerja Mesin</b> mulai bulan <b>Januari</b> sampai <b>Februari</b>
+                        </div>
                         <table id="TabelUser" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
@@ -80,43 +88,41 @@
                     <form role="form">
                         <div class="card-body">
                             <div class="form-group col-12">
-                            <label for="BulanAwal">Bulan Awal</label>
-                            <select class="custom-select" id="BulanAwal">
-                              <option selected>Pilih Bulan Awal</option>
-                              <option value="1">Januari</option>
-                              <option value="2">Februari</option>
-                              <option value="2">Maret</option>
-                              <option value="2">April</option>
-                              <option value="2">Mei</option>
-                              <option value="2">Juni</option>
-                              <option value="2">Juli</option>
-                              <option value="2">Agustus</option>
-                              <option value="2">September</option>
-                              <option value="2">Oktober</option>
-                              <option value="2">November</option>
-                              <option value="2">Desember</option>
-                          </select>
-                      </div>
-                      <div class="form-group col-12">
-                        <label for="BulanAkhir">Bulan Akhir</label>
-                        <select class="custom-select" id="BulanAkhir">
-                          <option selected>Pilih Bulan Akhir</option>
-                          <option value="1">Januari</option>
-                          <option value="2">Februari</option>
-                          <option value="2">Maret</option>
-                          <option value="2">April</option>
-                          <option value="2">Mei</option>
-                          <option value="2">Juni</option>
-                          <option value="2">Juli</option>
-                          <option value="2">Agustus</option>
-                          <option value="2">September</option>
-                          <option value="2">Oktober</option>
-                          <option value="2">November</option>
-                          <option value="2">Desember</option>
-                      </select>
-                  </div>
-                            
-
+                                <label for="BulanAwal">Bulan Awal</label>
+                                <select class="custom-select" id="BulanAwal">
+                                    <option selected>Pilih Bulan Awal</option>
+                                    <option value="1">Januari</option>
+                                    <option value="2">Februari</option>
+                                    <option value="2">Maret</option>
+                                    <option value="2">April</option>
+                                    <option value="2">Mei</option>
+                                    <option value="2">Juni</option>
+                                    <option value="2">Juli</option>
+                                    <option value="2">Agustus</option>
+                                    <option value="2">September</option>
+                                    <option value="2">Oktober</option>
+                                    <option value="2">November</option>
+                                    <option value="2">Desember</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-12">
+                                <label for="BulanAkhir">Bulan Akhir</label>
+                                <select class="custom-select" id="BulanAkhir">
+                                    <option selected>Pilih Bulan Akhir</option>
+                                    <option value="1">Januari</option>
+                                    <option value="2">Februari</option>
+                                    <option value="2">Maret</option>
+                                    <option value="2">April</option>
+                                    <option value="2">Mei</option>
+                                    <option value="2">Juni</option>
+                                    <option value="2">Juli</option>
+                                    <option value="2">Agustus</option>
+                                    <option value="2">September</option>
+                                    <option value="2">Oktober</option>
+                                    <option value="2">November</option>
+                                    <option value="2">Desember</option>
+                                </select>
+                            </div>
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer">

@@ -76,7 +76,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item has-treeview">
-              <a href="#" class="nav-link <?=$this->uri->segment(1) == 'solar' ? 'active' : '' ?> <?= $this->uri->segment(1) == 'jam_kerja_alat' ? 'active' : '' ?>">
+              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'solar' ? 'active' : '' ?> <?= $this->uri->segment(1) == 'jam_kerja_alat' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Transaksi
@@ -99,7 +99,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </ul>
             </li>
             <li class="nav-item has-treeview menu-close">
-              <a href="#" class="nav-link">
+              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'lap_jam_kerja_alat' ? 'active' : '' ?><?= $this->uri->segment(1) == 'stoksolar' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-print"></i>
                 <p>
                   Laporan
@@ -108,13 +108,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= base_url('lap_jam_kerja_alat') ?>" class="nav-link">
+                  <a href="<?= base_url('lap_jam_kerja_alat') ?>" class="nav-link <?= $this->uri->segment(1) == 'lap_jam_kerja_alat' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Jam Kerja Alat</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('stoksolar') ?>" class="nav-link">
+                  <a href="<?= base_url('stoksolar') ?>" class="nav-link <?= $this->uri->segment(1) == 'stoksolar' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Stok Solar</p>
                   </a>
@@ -145,7 +145,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </ul>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('setting') ?>" class="nav-link">
+              <a href="<?= base_url('setting') ?>" class="nav-link <?= $this->uri->segment(1) == 'setting' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-user-cog"></i>
                 <p>
                   Setting
@@ -153,7 +153,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <hr>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link" data-toggle="modal" data-target="#modal-logout">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
                 <p>
                   Logout
@@ -212,3 +215,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </body>
 
 </html>
+
+<!-- modal-logout -->
+<div class="modal fade" id="modal-logout">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <b class="h4">Apakah anda yakin ingin logout?</b>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn  btn-secondary" data-dismiss="modal">Batal</button>
+        <button type="button" class="btn  btn-danger">Logout</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
