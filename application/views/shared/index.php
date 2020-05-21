@@ -108,7 +108,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="<?= base_url('lap_jam_kerja_alat') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Jam Kerja Alat</p>
                   </a>
@@ -145,7 +145,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </ul>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="<?= base_url('setting') ?>" class="nav-link">
                 <i class="nav-icon fas fa-user-cog"></i>
                 <p>
                   Setting

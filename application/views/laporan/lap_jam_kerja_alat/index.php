@@ -3,12 +3,12 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Stok Solar</h1>
+                <h1>Jam Kerja Alat</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Laporan</a></li>
-                    <li class="breadcrumb-item active">Stok Solar</li>
+                    <li class="breadcrumb-item active">Jam Kerja Alat</li>
                 </ol>
             </div>
         </div>
@@ -22,40 +22,49 @@
             <div class="col-md-8">
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Stok Solar</h3>
+                        <h3 class="card-title">Jam Kerja Alat</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- card-body -->
                     <div class="card-body">
-                        <div class="row">
-                        <div class="alert alert-success col-sm-11" role="alert">
-                          Laporan Stok Solar <b>Tangki 5000L</b> mulai bulan <b>Januari</b> sampai <b>Februari</b>
-                      </div>
-                      <right><button type="button" class="btn btn-primary btn-lg"><i class="nav-icon fas fa-download"></i></button></right>
-                  </div>
-                      <table id="TabelUser" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th>Kode Transaksi</th>
-                                <th>Tangki</th>
-                                <th>Tanggal</th>
-                                <th>Kategori</th>
-                                <th>Stok</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1224</td>
-                                <td>5000L</td>
-                                <td>17/07/1996</td>
-                                <td>Pengambilan</td>
-                                <td>2000</td>
-                            </tr>
+                        <table id="TabelUser" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Tanggal</th>
+                                    <th>Kode Alat</th>
+                                    <th>Nama Alat</th>
+                                    <th>Operator</th>
+                                    <th>Jam Mulai</th>
+                                    <th>Jam Selesai</th>
+                                    <th>Total Jam Kerja</th>
+                                    <th>Remaks</th>
+                                    <th style="width: 10px">Modify</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>17/07/1996</td>
+                                    <td>001</td>
+                                    <td>Dump Truck</td>
+                                    <td>Sigit Ridwiyanto</td>
+                                    <td>08:00</td>
+                                    <td>17:00</td>
+                                    <td>9 Jam</td>
+                                    <td>Tunnel</td>
+                                    <td>
+                                        <div class="btn-group">
+
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
+
+                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
                         </table>
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer">
-                        <small class="text-muted float-right">Stok Solar pada tanggal 09/05/2020</small>
+                        <small class="text-muted float-right">Jam Kerja Alat pada tanggal 09/05/2020</small>
                     </div>
                 </div>
                 <!-- /.card -->
@@ -64,22 +73,13 @@
                 <!-- general form elements -->
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Stok Solar</h3>
+                        <h3 class="card-title">Jam Kerja Alat</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
                     <form role="form">
                         <div class="card-body">
-                            <div class="row">
-                              <div class="form-group col-12">
-                                <label for="Tangki">Tangki</label>
-                                <select class="custom-select" id="Tangki">
-                                  <option selected>Pilih Tangki</option>
-                                  <option value="1">Tangki 5000L</option>
-                                  <option value="2">Tangki 8000L</option>
-                              </select>
-                          </div>
-                          <div class="form-group col-6">
+                            <div class="form-group col-12">
                             <label for="BulanAwal">Bulan Awal</label>
                             <select class="custom-select" id="BulanAwal">
                               <option selected>Pilih Bulan Awal</option>
@@ -97,7 +97,7 @@
                               <option value="2">Desember</option>
                           </select>
                       </div>
-                      <div class="form-group col-6">
+                      <div class="form-group col-12">
                         <label for="BulanAkhir">Bulan Akhir</label>
                         <select class="custom-select" id="BulanAkhir">
                           <option selected>Pilih Bulan Akhir</option>
@@ -115,18 +115,19 @@
                           <option value="2">Desember</option>
                       </select>
                   </div>
+                            
 
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                <button type="submit" class="btn btn-primary float-right">Submit</button>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary float-right">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
             </div>
-        </form>
+        </div>
     </div>
-    <!-- /.card -->
-</div>
-</div>
-</div>
 </section>
 
 
