@@ -34,6 +34,7 @@
                                     <th>Nama Lengkap</th>
                                     <th>Telpon</th>
                                     <th>Email</th>
+                                    <th>Level</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
                             </thead>
@@ -44,6 +45,7 @@
                                     </td>
                                     <td>08777263516</td>
                                     <td>ade.kasep@gmail.com</td>
+                                    <td>Administrator</td>
                                     <td>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
@@ -97,6 +99,15 @@
                                 <label for="volume">Password</label>
                                 <input type="text" class="form-control" id="volume1" placeholder="Enter Volume">
                             </div>
+                            <div class="form-group">
+                                <label for="Level">Level</label>
+                                <select class="custom-select" id="Level">
+                                    <option selected>Pilih Level</option>
+                                    <option value="1">Administrator</option>
+                                    <option value="2">Operational</option>
+                                    <option value="2">Manager</option>
+                                </select>
+                            </div>
 
                         </div>
                         <!-- /.card-body -->
@@ -138,6 +149,9 @@
                         </li>
                         <li class="list-group-item">
                             <b>Alamat</b> <a class="float-right">Majalengka City</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Level</b> <a class="float-right">Administrator</a>
                         </li>
                     </ul>
                 </div>
