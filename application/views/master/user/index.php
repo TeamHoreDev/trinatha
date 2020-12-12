@@ -30,85 +30,123 @@
                         <table id="TabelUser" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
+                                    <th>No</th>
                                     <th>NIK</th>
                                     <th>Nama Lengkap</th>
                                     <th>Telpon</th>
                                     <th>Email</th>
+                                    <th>Level</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php 
+                                $no=1;
+                                foreach ($MasterUser as $dt) {?>
                                 <tr>
-                                    <td>88273</td>
-                                    <td>Ade Kasep
-                                    </td>
-                                    <td>08777263516</td>
-                                    <td>ade.kasep@gmail.com</td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
+                                <td><?php echo $no++ ?></td>
+                                <td><?php echo $dt->Nik ?></td>
+                                <td><?php echo $dt->NamaLengkap ?></td>
+                                <td><?php echo $dt->Telepon ?></td>
+                                <td><?php echo $dt->Email ?></td>
+                                <td><?php echo $dt->Level ?></td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
 
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
 
-                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                        </table>
-                    </div>
-                    <!-- /.card-body -->
-                    <div class="card-footer">
-                        <small class="text-muted float-right">Data user pada tanggal 09/05/2020</small>
-                    </div>
+                                        <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                    </table>
                 </div>
-                <!-- /.card -->
-            </div>
-            <div class="col">
-                <!-- general form elements -->
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title">Daftar User</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <!-- form start -->
-                    <form role="form">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="Tanggal">NIK</label>
-                                <input type="text" class="form-control" id="Tanggal" name="Tanggal" placeholder="Enter Tanggal">
-                            </div>
-                            <div class="form-group">
-                                <label for="KodeUnit">Nama Lengkap</label>
-                                <input type="text" class="form-control" id="KodeUnit" name="KodeUnit" placeholder="Enter Kode Unit">
-                            </div>
-                            <div class="form-group">
-                                <label for="NamaAlat">Telpon</label>
-                                <input type="text" class="form-control" id="NamaAlat" name="NamaAlat" placeholder="Enter Nama Alat">
-                            </div>
-                            <div class="form-group">
-                                <label for="Operator">Email</label>
-                                <input type="text" class="form-control" id="Operator" name="Operator" placeholder="Enter Operator">
-                            </div>
-                            <div class="form-group">
-                                <label for="volume">Username</label>
-                                <input type="text" class="form-control" id="volume" placeholder="Enter Volume">
-                            </div>
-                            <div class="form-group">
-                                <label for="volume">Password</label>
-                                <input type="text" class="form-control" id="volume1" placeholder="Enter Volume">
-                            </div>
-
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary float-right">Daftar</button>
-                        </div>
-                    </form>
+                <!-- /.card-body -->
+                <div class="card-footer">
+                    <small class="text-muted float-right">Data user pada tanggal 09/05/2020</small>
                 </div>
-                <!-- /.card -->
             </div>
+            <!-- /.card -->
         </div>
-    </div>
+        <div class="col">
+            <!-- general form elements -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Daftar User</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form role="form" action="" method="post">
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="Nik">NIK</label>
+                            <input type="text" class="form-control <?php echo form_error('Nik')?'is-invalid':'' ?>" id="Nik" name="Nik" placeholder="Enter NIK">
+                            <div class="invalid-feedback">
+                              <?php echo form_error('Nik') ?>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="NamaLengkap">Nama Lengkap</label>
+                        <input type="text" class="form-control <?php echo form_error('NamaLengkap')?'is-invalid':'' ?>" id="NamaLengkap" name="NamaLengkap" placeholder="Enter Nama Lengkap">
+                        <div class="invalid-feedback">
+                          <?php echo form_error('NamaLengkap') ?>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="Telepon">Telepon</label>
+                    <input type="text" class="form-control <?php echo form_error('Telepon')?'is-invalid':'' ?>" id="Telepon" name="Telepon" placeholder="Enter Telepon">
+                    <div class="invalid-feedback">
+                      <?php echo form_error('Telepon') ?>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="text" class="form-control <?php echo form_error('Email')?'is-invalid':'' ?>" id="Email" name="Email" placeholder="Enter Email">
+                <div class="invalid-feedback">
+                  <?php echo form_error('Email') ?>
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="Username">Username</label>
+            <input type="text" class="form-control <?php echo form_error('Username')?'is-invalid':'' ?>" id="Username" placeholder="Enter Username">
+            <div class="invalid-feedback">
+              <?php echo form_error('Username') ?>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="Password">Password</label>
+        <input type="text" class="form-control" id="Password" placeholder="Enter Password">
+        <div class="invalid-feedback">
+          <?php echo form_error('Password') ?>
+      </div>
+  </div>
+  <div class="form-group">
+    <label for="Level">Level</label>
+    <select class="form-control <?php echo form_error('Level')?'is-invalid':'' ?>" id="Level" name="Level">
+        <option hidden value="" selected>Pilih Level</option>
+        <option>Administrator</option>
+        <option>Operational</option>
+        <option>Manager</option>
+    </select>
+    <div class="invalid-feedback">
+      <?php echo form_error('Level') ?>
+  </div>
+</div>
+
+</div>
+<!-- /.card-body -->
+<div class="card-footer">
+    <button type="submit" class="btn btn-primary float-right">Daftar</button>
+</div>
+</form>
+</div>
+<!-- /.card -->
+</div>
+</div>
+</div>
 </section>
 
 
@@ -138,6 +176,9 @@
                         </li>
                         <li class="list-group-item">
                             <b>Alamat</b> <a class="float-right">Majalengka City</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>Level</b> <a class="float-right">Administrator</a>
                         </li>
                     </ul>
                 </div>
