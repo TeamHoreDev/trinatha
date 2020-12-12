@@ -3,7 +3,7 @@
   <div class="container-fluid">
     <div class="row mb-2">
       <div class="col-sm-6">
-        <h1>Solar</h1>
+        <h1>Penerimaan Solar</h1>
       </div>
       <div class="col-sm-6">
         <ol class="breadcrumb float-sm-right">
@@ -18,7 +18,7 @@
 <section class="content">
   <div class="container-fluid">
     <div class="col-12">
-      <div class="card card-primary card-outline card-tabs">
+      <div class="card card-navy card-outline card-tabs">
         <div class="card-header p-0 pt-1 border-bottom-0">
           <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
             <li class="nav-item">
@@ -42,7 +42,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="row">
-                    <div class="card mr-3 ml-2 card-info">
+                    <div class="card mr-3 ml-2 card-navy">
                       <div class="card-header">
                         <h3 class="card-title">Tangki 5000L</h3>
                       </div>
@@ -54,7 +54,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="card  card-info mr-2">
+                    <div class="card  card-navy mr-2">
                       <div class="card-header">
                         <h3 class="card-title">Tangki 8000L</h3>
                       </div>
@@ -68,7 +68,7 @@
                     </div>
                     <div class="col">
                       <!-- general form elements -->
-                      <div class="card card-info">
+                      <div class="card card-navy">
                         <div class="card-header">
                           <h3 class="card-title">Input Pengambilan</h3>
                         </div>
@@ -107,7 +107,7 @@
                           </div>
                           <!-- /.card-body -->
                           <div class="card-footer">
-                            <button type="submit" class="btn btn-info float-right">Simpan</button>
+                            <button type="submit" class="btn btn-primary float-right">Simpan</button>
                           </div>
                         </form>
                       </div>
@@ -119,7 +119,7 @@
               <div class="row">
                 <!-- left column -->
                 <div class="col-md-12">
-                  <div class="card card-info">
+                  <div class="card card-navy">
                     <div class="card-header">
                       <h3 class="card-title">Daftar Pengambilan</h3>
                     </div>

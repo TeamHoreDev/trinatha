@@ -32,7 +32,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="wrapper">
 
     <!-- Navbar -->
-    <nav class="main-header navbar navbar-expand navbar-dark navbar-primary">
+    <nav class="main-header navbar navbar-expand navbar-light navbar-white">
       <!-- Left navbar links -->
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -43,11 +43,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-light-primary elevation-4">
+    <aside class="main-sidebar sidebar-dark-primary bg-navy elevation-4">
       <!-- Brand Logo -->
-      <a href="<?= base_url() ?>" class="brand-link">
-        <img src="<?= base_url("assets/images/logo.jpeg") ?>" alt="AdminLTE Logo" class="brand-image">
-        <span class="brand-text font-gray-900">TRINATHA GROUP</span>
+      <a href="<?= base_url() ?>" class="brand-link navbar-light">
+        <img src="<?= base_url("assets/images/logo.png") ?>" alt="AdminLTE Logo" class="brand-image">
+        <span class="brand-text text-secondary font-weight-bold">TRINATHA GROUP</span>
       </a>
 
       <!-- Sidebar -->
@@ -68,7 +68,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
             <li class="nav-item">
-              <a href="<?php echo base_url('dashboard') ?>" class="nav-link <?= $this->uri->segment(1) == 'dashboard' ? 'active' : '' ?>">
+              <a href="<?php echo base_url('dashboard') ?>" class="nav-link <?= $this->uri->segment(1) == 'dashboard' ? 'active' : '' ?><?= $this->uri->segment(1) == '' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
                   Dashboard
@@ -85,9 +85,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= base_url('solar') ?>" class="nav-link <?= $this->uri->segment(1) == 'solar' ? 'active' : '' ?>">
+                  <a href="<?= base_url('solar/penerimaan') ?>" class="nav-link <?= $this->uri->segment(2) == 'penerimaan' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Solar</p>
+                    <p>Penerimaan Solar</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= base_url('solar/pengambilan') ?>" class="nav-link <?= $this->uri->segment(2) == 'pengambilan' ? 'active' : '' ?>">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Pengambilan Solar</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= base_url('solar/peminjaman') ?>" class="nav-link <?= $this->uri->segment(2) == 'peminjaman' ? 'active' : '' ?>">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Peminjaman Solar</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= base_url('solar/pengembalian') ?>" class="nav-link <?= $this->uri->segment(2) == 'pengembalian' ? 'active' : '' ?>">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Pengembalian Solar</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -99,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </ul>
             </li>
             <li class="nav-item has-treeview menu-close">
-              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'lap_jam_kerja_alat' ? 'active' : '' ?><?= $this->uri->segment(1) == 'stoksolar' ? 'active' : '' ?>">
+              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'lap_jam_kerja_alat' ? 'active' : '' ?><?= $this->uri->segment(2) == 'stoksolar' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-print"></i>
                 <p>
                   Laporan
@@ -199,7 +217,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         PT TRINATHA UTAMA MINERAL
       </div>
       <!-- Default to the left -->
-      <strong>Copyright &copy; <?= date('Y') ?> <a href="https://github.com/TeamHoreDev" target="_blank">TeamHoreDev</a>.</strong> All rights reserved.
+      <strong>Copyright &copy; <?= date('Y') ?> <a href="https://gisaka.net/" target="_blank">GisakaNet</a>.</strong> All rights reserved.
     </footer>
   </div>
   <!-- ./wrapper -->

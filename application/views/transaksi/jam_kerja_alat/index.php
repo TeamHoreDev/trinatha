@@ -19,10 +19,12 @@
     <div class="container-fluid">
         <div class="row">
             <!-- left column -->
-            <div class="col-md-8">
-                <div class="card card-primary">
+            <div class="col-12">
+                <div class="card card-navy">
                     <div class="card-header">
-                        <h3 class="card-title">Jam Kerja Alat</h3>
+                        <h2 class="card-title pt-1">List Jam Kerja Alat</h2>
+                        <a href="<?= base_url('jam_kerja_alat/create') ?>" class="btn btn-sm btn-primary float-right"> + Insert</a>
+
                     </div>
                     <!-- /.card-header -->
                     <!-- card-body -->
@@ -66,54 +68,6 @@
                     <div class="card-footer">
                         <small class="text-muted float-right">Jam Kerja Alat pada tanggal 09/05/2020</small>
                     </div>
-                </div>
-                <!-- /.card -->
-            </div>
-            <div class="col">
-                <!-- general form elements -->
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title">Jam Kerja Alat</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <!-- form start -->
-                    <form role="form">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="Tanggal">Tanggal</label>
-                                <input type="date" class="form-control" id="Tanggal" name="Tanggal" placeholder="Enter Tanggal">
-                            </div>
-                            <div class="form-group">
-                                <label for="KodeAlat">Kode Alat</label>
-                                <input type="text" class="form-control" id="KodeAlat" name="KodeAlat" placeholder="Enter Kode Alat">
-                            </div>
-                            <div class="form-group">
-                                <label for="NamaAlat">Nama Alat</label>
-                                <input type="text" class="form-control" id="NamaAlat" name="NamaAlat" placeholder="Enter Nama Alat">
-                            </div>
-                            <div class="form-group">
-                                <label for="Operator">Operator</label>
-                                <input type="text" class="form-control" id="Operator" name="Operator" placeholder="Enter Operator">
-                            </div>
-                            <div class="form-group">
-                                <label for="JamMulai">Jam Mulai</label>
-                                <input type="time" class="form-control" id="JamMulai" placeholder="Enter Jam Mulai">
-                            </div>
-                            <div class="form-group">
-                                <label for="JamSelesai">Jam Selesai</label>
-                                <input type="time" class="form-control" id="JamSelesai" placeholder="Enter Jam Selesai">
-                            </div>
-                            <div class="form-group">
-                                <label for="Remaks">Remaks</label>
-                                <textarea class="form-control" id="Remaks" placeholder="Enter Remaks"></textarea> 
-                            </div>
-
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary float-right">Simpan</button>
-                        </div>
-                    </form>
                 </div>
                 <!-- /.card -->
             </div>
