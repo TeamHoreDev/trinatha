@@ -36,4 +36,8 @@ class Solar extends CI_Controller
 	{
 		$this->template->load('shared/index', 'transaksi/solar/create_pengembalian');
 	}
+	public function test()
+	{
+		$this->template->load('shared/index', 'transaksi/solar/index');
+	}
 }

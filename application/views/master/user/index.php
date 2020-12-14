@@ -17,136 +17,64 @@
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
-        <div class="row">
-            <!-- left column -->
-            <div class="col-md-8">
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title">List User</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <!-- card-body -->
-                    <div class="card-body">
-                        <table id="TabelUser" class="table table-bordered table-striped">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>NIK</th>
-                                    <th>Nama Lengkap</th>
-                                    <th>Telpon</th>
-                                    <th>Email</th>
-                                    <th>Level</th>
-                                    <th style="width: 10px">Modify</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                $no=1;
-                                foreach ($MasterUser as $dt) {?>
-                                <tr>
-                                <td><?php echo $no++ ?></td>
-                                <td><?php echo $dt->Nik ?></td>
-                                <td><?php echo $dt->NamaLengkap ?></td>
-                                <td><?php echo $dt->Telepon ?></td>
-                                <td><?php echo $dt->Email ?></td>
-                                <td><?php echo $dt->Level ?></td>
-                                <td>
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
+        <div class="card card-navy">
+            <div class="card-header">
+                <h3 class="card-title">List User</h3>
+                <a href="<?= base_url('user/create') ?>" class="btn btn-sm btn-primary float-right"> + Insert</a>
 
-                                        <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
-
-                                        <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
-                                    </div>
-                                </td>
+            </div>
+            <!-- /.card-header -->
+            <!-- card-body -->
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="TabelUser" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>NIK</th>
+                                <th>Nama Lengkap</th>
+                                <th>Telpon</th>
+                                <th>Email</th>
+                                <th>Level</th>
+                                <th>Username</th>
+                                <th style="width: 10px">Modify</th>
                             </tr>
-                        <?php } ?>
-                    </tbody>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $no = 1;
+                            foreach ($user as $dt) { ?>
+                                <tr>
+                                    <td><?php echo $no++ ?></td>
+                                    <td><?php echo $dt->nik ?></td>
+                                    <td><?php echo $dt->nama_user ?></td>
+                                    <td><?php echo $dt->telepon ?></td>
+                                    <td><?php echo $dt->email ?></td>
+                                    <td><?php echo $dt->role ?></td>
+                                    <td><?php echo $dt->username ?></td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
+
+                                            <a href="<?= base_url('user/edit/') . $dt->id_user ?>"><button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>
+
+                                            <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'user/delete/' . $dt->id_user ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                        </tbody>
                     </table>
                 </div>
-                <!-- /.card-body -->
-                <div class="card-footer">
-                    <small class="text-muted float-right">Data user pada tanggal 09/05/2020</small>
-                </div>
-            </div>
-            <!-- /.card -->
-        </div>
-        <div class="col">
-            <!-- general form elements -->
-            <div class="card card-primary">
-                <div class="card-header">
-                    <h3 class="card-title">Daftar User</h3>
-                </div>
-                <!-- /.card-header -->
-                <!-- form start -->
-                <form role="form" action="" method="post">
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="Nik">NIK</label>
-                            <input type="text" class="form-control <?php echo form_error('Nik')?'is-invalid':'' ?>" id="Nik" name="Nik" placeholder="Enter NIK">
-                            <div class="invalid-feedback">
-                              <?php echo form_error('Nik') ?>
-                          </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="NamaLengkap">Nama Lengkap</label>
-                        <input type="text" class="form-control <?php echo form_error('NamaLengkap')?'is-invalid':'' ?>" id="NamaLengkap" name="NamaLengkap" placeholder="Enter Nama Lengkap">
-                        <div class="invalid-feedback">
-                          <?php echo form_error('NamaLengkap') ?>
-                      </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="Telepon">Telepon</label>
-                    <input type="text" class="form-control <?php echo form_error('Telepon')?'is-invalid':'' ?>" id="Telepon" name="Telepon" placeholder="Enter Telepon">
-                    <div class="invalid-feedback">
-                      <?php echo form_error('Telepon') ?>
-                  </div>
-              </div>
-              <div class="form-group">
-                <label for="Email">Email</label>
-                <input type="text" class="form-control <?php echo form_error('Email')?'is-invalid':'' ?>" id="Email" name="Email" placeholder="Enter Email">
-                <div class="invalid-feedback">
-                  <?php echo form_error('Email') ?>
-              </div>
-          </div>
-          <div class="form-group">
-            <label for="Username">Username</label>
-            <input type="text" class="form-control <?php echo form_error('Username')?'is-invalid':'' ?>" id="Username" placeholder="Enter Username">
-            <div class="invalid-feedback">
-              <?php echo form_error('Username') ?>
-          </div>
-      </div>
-      <div class="form-group">
-        <label for="Password">Password</label>
-        <input type="text" class="form-control" id="Password" placeholder="Enter Password">
-        <div class="invalid-feedback">
-          <?php echo form_error('Password') ?>
-      </div>
-  </div>
-  <div class="form-group">
-    <label for="Level">Level</label>
-    <select class="form-control <?php echo form_error('Level')?'is-invalid':'' ?>" id="Level" name="Level">
-        <option hidden value="" selected>Pilih Level</option>
-        <option>Administrator</option>
-        <option>Operational</option>
-        <option>Manager</option>
-    </select>
-    <div class="invalid-feedback">
-      <?php echo form_error('Level') ?>
-  </div>
-</div>
 
-</div>
-<!-- /.card-body -->
-<div class="card-footer">
-    <button type="submit" class="btn btn-primary float-right">Daftar</button>
-</div>
-</form>
-</div>
-<!-- /.card -->
-</div>
-</div>
-</div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+                <small class="text-muted float-right">Data user pada tanggal 09/05/2020</small>
+            </div>
+        </div>
+        <!-- /.card -->
+    </div>
 </section>
 
 
@@ -215,10 +143,46 @@
 <!-- /.modal -->
 
 
+
+<!--Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-3 d-flex justify-content-center">
+                        <i class="fa  fa-exclamation-triangle" style="font-size: 70px; color:red;"></i>
+                    </div>
+                    <div class="col-9 pt-2">
+                        <h5>Apakah anda yakin?</h5>
+                        <span>Data yang dihapus tidak akan bisa dikembalikan.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" data-dismiss="modal"> Batal</button>
+                <a id="btn-delete" class="btn btn-danger" href="#"> Hapus</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirm -->
+<script type="text/javascript">
+    function deleteConfirm(url) {
+        $('#btn-delete').attr('href', url);
+        $('#deleteModal').modal();
+    }
+</script>
 <!-- page script -->
 <script>
-    $(document).ready(function() {
-        $('#TabelUser').DataTable();
+    $(function() {
+        $('#TabelUser').DataTable({
+            "responsive": true,
+            "autoWidth": true,
+            "info": false,
+        });
         $('[data-tolltip="tooltip"]').tooltip({
             trigger: "hover"
         })

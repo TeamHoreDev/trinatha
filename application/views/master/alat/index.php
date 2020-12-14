@@ -20,9 +20,11 @@
         <div class="row">
             <!-- left column -->
             <div class="col-md-8">
-                <div class="card card-primary">
+                <div class="card card-navy">
                     <div class="card-header">
                         <h3 class="card-title">List Alat</h3>
+                        <a href="<?= base_url('alat/create') ?>" class="btn btn-sm btn-primary float-right"> + Insert</a>
+
                     </div>
                     <!-- /.card-header -->
                     <!-- card-body -->
@@ -30,25 +32,30 @@
                         <table id="TabelUser" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
+                                    <th style="width: 10px">No</th>
                                     <th>Kode Alat</th>
                                     <th>Nama Alat</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>88273</td>
-                                    <td>Ade Kasep
-                                    </td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top"
-                                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
+                                <?php
+                                $no = 1;
+                                foreach ($alat as $key) : ?>
+                                    <tr>
+                                        <td><?= $no++ ?></td>
+                                        <td><?= $key->kode_alat ?></td>
+                                        <td><?= $key->nama_alat ?></td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="<?= base_url('alat/edit/') . $key->id_alat ?>"><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>
 
-                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
+                                                <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'alat/delete/' . $key->id_alat ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+
                         </table>
                     </div>
                     <!-- /.card-body -->
@@ -58,59 +65,14 @@
                 </div>
                 <!-- /.card -->
             </div>
-            <div class="col">
-                <!-- general form elements -->
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title">Input Alat</h3>
-                    </div>
-                    <!-- /.card-header -->
-                    <!-- form start -->
-                    <form role="form">
-                        <div class="card-body">
-                            <div class="form-group">
-                                <label for="KodeAlat">Kode Alat</label>
-                                <input type="text" class="form-control" id="KodeAlat" name="KodeAlat" placeholder="Enter Kode Alat">
-                            </div>
-                            <div class="form-group">
-                                <label for="NamaAlat">Nama Alat</label>
-                                <input type="text" class="form-control" id="NamaAlat" name="NamaAlat" placeholder="Enter Nama Alat">
-                            </div>
-                            
 
-                        </div>
-                        <!-- /.card-body -->
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary float-right">Daftar</button>
-                        </div>
-                    </form>
-                </div>
-                <!-- /.card -->
-            </div>
         </div>
     </div>
 </section>
 
 
 
-<div class="modal fade" id="modal-delete">
-    <div class="modal-dialog">
-        <div class="modal-content bg-danger">
-            <div class="modal-body text-center">
 
-                <b class="h4">Apakah anda yakin?</b>
-                <p>data akan dihapus permanen!</p>
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-outline-light" data-dismiss="modal">Batal</button>
-                <button type="button" class="btn btn-outline-light">Hapus</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
 
 
 <!-- page script -->
@@ -122,4 +84,35 @@
         })
 
     });
+</script>
+<!--Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-3 d-flex justify-content-center">
+                        <i class="fa  fa-exclamation-triangle" style="font-size: 70px; color:red;"></i>
+                    </div>
+                    <div class="col-9 pt-2">
+                        <h5>Apakah anda yakin?</h5>
+                        <span>Data yang dihapus tidak akan bisa dikembalikan.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" data-dismiss="modal"> Batal</button>
+                <a id="btn-delete" class="btn btn-danger" href="#"> Hapus</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirm -->
+<script type="text/javascript">
+    function deleteConfirm(url) {
+        $('#btn-delete').attr('href', url);
+        $('#deleteModal').modal();
+    }
 </script>

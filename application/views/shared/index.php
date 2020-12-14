@@ -24,13 +24,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="<?= base_url("assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js") ?>"></script>
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url("assets/dist/css/adminlte.min.css") ?>">
+  <!-- Sweetalert -->
+  <link rel="stylesheet" href="<?= base_url() . 'assets/plugins/sweetalert2/dark.css' ?>">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="<?= base_url() . 'assets/plugins/toastr/toastr.min.css' ?>">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
-
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-light navbar-white">
       <!-- Left navbar links -->
@@ -126,17 +129,24 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= base_url('lap_jam_kerja_alat') ?>" class="nav-link <?= $this->uri->segment(1) == 'lap_jam_kerja_alat' ? 'active' : '' ?>">
+                  <a href="<?= base_url('stoksolar') ?>" class="nav-link <?= $this->uri->segment(1) == 'stoksolar' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Jam Kerja Alat</p>
+                    <p>Penerimaan Solar</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="<?= base_url('stoksolar') ?>" class="nav-link <?= $this->uri->segment(1) == 'stoksolar' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Stok Solar</p>
+                    <p>Pemakaian Solar</p>
                   </a>
                 </li>
+                <li class="nav-item">
+                  <a href="<?= base_url('lap_jam_kerja_alat') ?>" class="nav-link <?= $this->uri->segment(1) == 'lap_jam_kerja_alat' ? 'active' : '' ?>">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Jam Kerja Alat</p>
+                  </a>
+                </li>
+
               </ul>
             </li>
             <li class="nav-item has-treeview">
@@ -158,6 +168,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <a href="<?= base_url('user') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Master User</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?= base_url('vendor') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'vendor' ? 'active' : '' ?>">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>Master Vendor</p>
                   </a>
                 </li>
               </ul>
@@ -229,7 +245,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="<?= base_url("assets/plugins/bootstrap/js/bootstrap.bundle.min.js") ?>"></script>
   <!-- AdminLTE App -->
   <script src="<?= base_url("assets/dist/js/adminlte.min.js") ?>"></script>
-  <script src="<?= base_url("assests/plugins/jquery-knob/jquery.knob.min.js") ?>"></script>
+  <!-- Sweetalert -->
+  <script src="<?= base_url() . 'assets/plugins/sweetalert2/sweetalert2.min.js' ?>"></script>
+  <!-- Toastr -->
+  <script src="<?= base_url() . 'assets/plugins/toastr/toastr.min.js' ?>"></script>
 </body>
 
 </html>
@@ -251,3 +270,35 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+<!-- Alert Config -->
+<script type="text/javascript">
+  $(function() {
+    const Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 10000
+    });
+    <?php if ($this->session->flashdata('success')) { ?>
+      Toast.fire({
+        icon: 'success',
+        title: '<?= $this->session->flashdata('success'); ?>'
+      });
+    <?php } else if ($this->session->flashdata('error')) {  ?>
+      Toast.fire({
+        icon: 'error',
+        title: '<?= $this->session->flashdata('error'); ?>'
+      });
+    <?php } else if ($this->session->flashdata('warning')) {  ?>
+      Toast.fire({
+        icon: 'warning',
+        title: '<?= $this->session->flashdata('warning'); ?>'
+      });
+    <?php } else if ($this->session->flashdata('info')) {  ?>
+      Toast.fire({
+        icon: 'info',
+        title: '<?= $this->session->flashdata('info'); ?>'
+      });
+    <?php } ?>
+  });
+</script>
