@@ -1,72 +1,98 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <div class="row mb-2">
+    <div class="col-sm-6">
+      <h1>Dashboard</h1>
+    </div>
+    <div class="col-sm-6">
+      <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item active">Dashboard</li>
+      </ol>
+    </div>
+  </div>
+</section>
 <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <!-- Small boxes (Stat box) -->
-        <div class="row">
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>150</h3>
+<section class="content">
+  <div class="container-fluid">
+    <!-- Summary card -->
 
-                <p>New Orders</p>
+    <!-- /.row -->
+    <!-- Stok solar sekarang -->
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card card-navy">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="card card-navy">
+                  <div class="card-header">Tangki 5000 Liter</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-3">
+                        <div class="progress vertical" style="width: 100px">
+                          <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" aria-valuenow="<?= $stok_5000 ?>" aria-valuemin="0" aria-valuemax="5000" style="height: <?= $stok_5000 / 5000 * 100 ?>%">
+                            <h5><?= $stok_5000 / 5000 * 100 ?>%</h5>
+
+                            <span class="sr-only">40%</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="card">
+                          <div class="card-body">
+                            <strong>Stok Sekarang : </strong> <span class="badge badge-primary"><?= $stok_5000 ?> L</span> <br>
+                            <strong>Kapasitas Maksimum : </strong> 5000 L <br>
+                            <strong>Kapasitas Minimum : </strong> 1500 L
+                          </div>
+                        </div>
+                        <?php if ($stok_5000 < 1500) { ?>
+                          <div class="alert alert-danger" role="alert">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Stok solar kurang dari 1000 Liter, segera lakukan <a href="#" class="alert-link">Pengisian Solar</a>
+                          </div>
+                        <?php } ?>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
+              <div class="col-md-6">
+                <div class="card card-navy">
+                  <div class="card-header">Tangki 8000 Liter</div>
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-3">
+                        <div class="progress vertical" style="width: 100px">
+                          <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" aria-valuenow="<?= $stok_8000 ?>" aria-valuemin="0" aria-valuemax="8000" style="height: <?= $stok_8000 / 8000 * 100 ?>%">
+                            <h5><?= $stok_8000 / 8000 * 100 ?>%</h5>
+                            <span class="sr-only"><?= $stok_8000 / 8000 * 100 ?>%</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-8">
+                        <div class="card">
+                          <div class="card-body">
+                            <strong>Stok Sekarang : </strong> <span class="badge badge-primary"><?= $stok_8000 ?> L</span><br>
+                            <strong>Kapasitas Maksimum : </strong> 8000 L <br>
+                            <strong>Kapasitas Minimum : </strong> 2000 L
+                          </div>
+                        </div>
+                        <?php if ($stok_8000 < 2000) { ?>
+                          <div class="alert alert-danger" role="alert">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Stok solar kurang dari 2000 Liter, segera lakukan <a href="#" class="alert-link">Pengisian Solar</a>
+                          </div>
+                        <?php } ?>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                <p>Bounce Rate</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-stats-bars"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                <h3>44</h3>
-
-                <p>User Registrations</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-
-                <p>Unique Visitors</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
         </div>
-        <!-- /.row -->
       </div>
-    </section>
-
-
-    <img src="<?php echo base_url()."assets/";?>dist/img/logo.jpg" class="img-fluid img-thumbnail" alt="Responsive image">
+    </div>
+  </div>
+</section>
+<!-- <img src="<?php echo base_url() . "assets/"; ?>dist/img/logo.jpg" class="img-fluid img-thumbnail" alt="Responsive image"> -->

@@ -29,44 +29,27 @@
                     <th>Nama Vendor</th>
                     <th>Quantity</th>
                     <th>Tangki</th>
+                    <th>Stok</th>
                     <th style="width: 10px">Modify</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1224</td>
-                    <td>28/05/2020</td>
-                    <td>001</td>
-                    <td>Takagi</td>
-                    <td>500</td>
-                    <td>5000L</td>
-                    <td>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
-
-                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
-
-                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>1224</td>
-                    <td>28/05/2020</td>
-                    <td>001</td>
-                    <td>Takagi</td>
-                    <td>500</td>
-                    <td>5000L</td>
-                    <td>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
-
-                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
-
-                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                    </td>
-                </tr>
+                <?php foreach ($penerimaan as $key) : ?>
+                    <tr>
+                        <td><?= $key->kode_transaksi ?></td>
+                        <td><?= $key->tanggal ?></td>
+                        <td><?= $key->no_surat_jalan ?></td>
+                        <td><?= $key->nama_vendor ?></td>
+                        <td><?= $key->solar_in ?></td>
+                        <td><?= $key->tangki ?>L</td>
+                        <td><?= $key->stok ?>L</td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'solar/delete/' . $key->id_transaksi ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
         </table>
     </div>
     <!-- /.card-body -->
@@ -74,3 +57,47 @@
         <small class="text-muted float-right">Data penerimaan solar pada tanggal 09/05/2020</small>
     </div>
 </div>
+<!-- datatables script -->
+<script>
+    $(document).ready(function() {
+        $('#TabelPenerimaan').DataTable({
+            "ordering": false
+        });
+        $('[data-tolltip="tooltip"]').tooltip({
+            trigger: "hover"
+        })
+
+    });
+</script>
+
+<!--Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-3 d-flex justify-content-center">
+                        <i class="fa  fa-exclamation-triangle" style="font-size: 70px; color:red;"></i>
+                    </div>
+                    <div class="col-9 pt-2">
+                        <h5>Apakah anda yakin?</h5>
+                        <span>Data yang dihapus tidak akan bisa dikembalikan.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" data-dismiss="modal"> Batal</button>
+                <a id="btn-delete" class="btn btn-danger" href="#"> Hapus</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirm -->
+<script type="text/javascript">
+    function deleteConfirm(url) {
+        $('#btn-delete').attr('href', url);
+        $('#deleteModal').modal();
+    }
+</script>

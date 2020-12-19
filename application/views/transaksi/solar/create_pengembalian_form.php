@@ -2,26 +2,47 @@
 <section class="content-header">
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>Pengambilan Solar</h1>
+            <h1>Pengembalian Solar</h1>
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Transaksi</a></li>
-                <li class="breadcrumb-item active">Pengambilan Solar</li>
+                <li class="breadcrumb-item active">Pengembalian Solar</li>
             </ol>
         </div>
     </div>
 </section>
 <div class="card card-navy">
     <div class="card-header">
-        <h2 class="card-title pt-1">List Pengambilan Solar</h2>
+        <h2 class="card-title pt-1">Input Pengembalian Solar</h2>
     </div>
     <!-- /.card-header -->
     <!-- form start -->
     <form role="form" method="POST" action="" autocomplete="off">
         <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>" style="display: none">
-        <input type="hidden" name="fjenis_transaksi" value="pengambilan" style="display: none">
+        <input type="hidden" name="fjenis_transaksi" value="pengembalian" style="display: none">
+        <input type="hidden" name="fid_peminjaman" value="<?= $peminjaman->id_peminjaman ?>" style="display: none">
         <div class="card-body">
+            <div class="row mb-1">
+                <div class="col-12">
+                    <div class="h5"><strong>Detail Peminjaman</strong></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <strong>Nama Vendor : </strong> <?= $peminjaman->nama_vendor ?><br>
+                    <strong>Telepon Vendor : </strong> <?= $peminjaman->telepon_vendor ?><br>
+                    <strong>PIC Vendor : </strong> <?= $peminjaman->pic_vendor ?><br>
+                    <strong>Alamat Vendor : </strong> <?= $peminjaman->alamat ?>
+                </div>
+                <div class="col-md-6">
+                    <strong>Kode Transaksi Peminjaman : </strong> <?= $peminjaman->kode_transaksi ?><br>
+                    <strong>Tanggal Peminjaman : </strong> <?= $peminjaman->tanggal ?><br>
+                    <strong>Tangki Peminjaman : </strong> <?= $peminjaman->tangki ?><br>
+                    <strong>Qty Peminjaman : </strong> <?= $peminjaman->solar_out ?>
+                </div>
+            </div>
+            <hr>
             <div class="row">
                 <div class="form-group col-6">
                     <label for="KodeTransaksi">Kode Transaksi</label>
@@ -38,46 +59,18 @@
                         <?= form_error('ftangki') ?>
                     </div>
                 </div>
-                <div class="form-group col-3">
-                    <label for="ftanggal">Tanggal</label>
+                <div class="form-group col-6">
+                    <label for="ftanggal">Tanggal Pengembalian</label>
                     <input type="date" class="form-control <?= form_error('ftanggal') ? 'is-invalid' : '' ?>" id="ftanggal" name="ftanggal" placeholder="Enter tanggal " value="<?= $this->input->post('ftanggal'); ?>">
                     <div class=" invalid-feedback">
                         <?= form_error('ftanggal') ?>
                     </div>
                 </div>
-                <div class="form-group col-3">
-                    <label for="fjam">Jam Pengambilan</label>
-                    <input type="time" class="form-control <?= form_error('fjam') ? 'is-invalid' : '' ?>" id="fjam" name="fjam" placeholder="Enter jam " value="<?= $this->input->post('fjam'); ?>">
-                    <div class=" invalid-feedback">
-                        <?= form_error('fjam') ?>
-                    </div>
-                </div>
                 <div class="form-group col-6">
-                    <label for="falat">Kode Alat</label>
-                    <select class="custom-select <?= form_error('falat') ? 'is-invalid' : '' ?>" id="falat" name="falat">
-                        <option selected value="" hidden>Pilih Alat</option>
-                        <?php foreach ($alat as $key) : ?>
-                            <option value="<?= $key->id_alat ?>" <?= $this->input->post('falat') == $key->id_alat ? 'selected' : '' ?>><?= $key->kode_alat . " - " . $key->nama_alat ?></option>
-                        <?php endforeach ?>
-                    </select>
+                    <label for="fsolar_in">Quantity (Liter)</label>
+                    <input type="text" class="form-control <?= form_error('fsolar_in') ? 'is-invalid' : '' ?>" id="fsolar_in" name="fsolar_in" placeholder="Enter quantity" value="<?= $this->input->post('fsolar_in'); ?>">
                     <div class="invalid-feedback">
-                        <?= form_error('falat') ?>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-6">
-                    <label for="fsolar_out">Quantity (Liter)</label>
-                    <input type="text" class="form-control <?= form_error('fsolar_out') ? 'is-invalid' : '' ?>" id="fsolar_out" name="fsolar_out" placeholder="Enter quantity" value="<?= $this->input->post('fsolar_out'); ?>">
-                    <div class="invalid-feedback">
-                        <?= form_error('fsolar_out') ?>
-                    </div>
-                </div>
-                <div class="form-group col-6">
-                    <label for="foperator">Nama Operator</label>
-                    <input type="text" class="form-control <?= form_error('foperator') ? 'is-invalid' : '' ?>" id="foperator" name="foperator" placeholder="Enter nama operator" value="<?= $this->input->post('foperator'); ?>">
-                    <div class="invalid-feedback">
-                        <?= form_error('foperator') ?>
+                        <?= form_error('fsolar_in') ?>
                     </div>
                 </div>
             </div>

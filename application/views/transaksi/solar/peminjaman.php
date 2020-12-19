@@ -25,33 +25,38 @@
                 <tr>
                     <th>Kode Transaksi</th>
                     <th>Tanggal</th>
-                    <th>No Peminjaman</th>
                     <th>Nama Vendor</th>
                     <th>Quantity</th>
                     <th>Tanki</th>
-                    <th>Status Pengembalian</th>
+                    <th>Status</th>
+                    <th>Stok</th>
                     <th style="width: 10px">Modify</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1224</td>
-                    <td>28/05/2020</td>
-                    <td>MX412</td>
-                    <td>Axata</td>
-                    <td>290</td>
-                    <td>8000L</td>
-                    <td>Ya</td>
-                    <td>
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
-
-                            <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button>
-
-                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-delete" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
-                        </div>
-                    </td>
-                </tr>
+                <?php foreach ($peminjaman as $key) : ?>
+                    <tr>
+                        <td><?= $key->kode_transaksi ?></td>
+                        <td><?= $key->tanggal ?></td>
+                        <td><?= $key->nama_vendor ?></td>
+                        <td><?= $key->solar_out ?>L</td>
+                        <td><?= $key->tangki ?>L</td>
+                        <td>
+                            <?php
+                            if ($key->status == 0) {
+                                echo '<span class="badge badge-danger">belum kembali</span>';
+                            } else {
+                                echo '<span class="badge badge-success">sudah kembali</span>';
+                            }  ?>
+                        </td>
+                        <td><?= $key->stok ?></td>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'solar/delete/' . $key->id_transaksi ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
         </table>
     </div>
     <!-- /.card-body -->
@@ -60,3 +65,49 @@
     </div>
 </div>
 <!-- /.card -->
+
+<!-- datatables script -->
+<script>
+    $(document).ready(function() {
+        $('#TabelPeminjaman').DataTable({
+            "ordering": false
+        });
+        $('[data-tolltip="tooltip"]').tooltip({
+            trigger: "hover"
+        })
+
+    });
+</script>
+
+
+<!--Delete Confirmation-->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-3 d-flex justify-content-center">
+                        <i class="fa  fa-exclamation-triangle" style="font-size: 70px; color:red;"></i>
+                    </div>
+                    <div class="col-9 pt-2">
+                        <h5>Apakah anda yakin?</h5>
+                        <span>Data yang dihapus tidak akan bisa dikembalikan.</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-default" type="button" data-dismiss="modal"> Batal</button>
+                <a id="btn-delete" class="btn btn-danger" href="#"> Hapus</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirm -->
+<script type="text/javascript">
+    function deleteConfirm(url) {
+        $('#btn-delete').attr('href', url);
+        $('#deleteModal').modal();
+    }
+</script>
