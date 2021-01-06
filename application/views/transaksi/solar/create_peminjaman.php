@@ -25,11 +25,11 @@
             <div class="row">
                 <div class="form-group col-6">
                     <label for="KodeTransaksi">Kode Transaksi</label>
-                    <input type="text" class="form-control <?= form_error('fkode_transaksi') ? 'is-invalid' : '' ?>" id="fkode_transaksi" name="fkode_transaksi" value="<?= "02" . date('dmy') . sprintf("%03s", $kode) ?>" readonly>
+                    <input type="text" class="form-control <?= form_error('fkode_transaksi') ? 'is-invalid' : '' ?>" id="fkode_transaksi" name="fkode_transaksi" value="<?= "SOP" . date('ym') . sprintf("%04s", $kode) ?>" readonly>
                 </div>
                 <div class="form-group col-6">
                     <label for="ftanggal">Tanggal</label>
-                    <input type="date" class="form-control <?= form_error('ftanggal') ? 'is-invalid' : '' ?>" id="ftanggal" name="ftanggal" placeholder="Enter tanggal " value="<?= $this->input->post('ftanggal'); ?>">
+                    <input type="text" class="form-control <?= form_error('ftanggal') ? 'is-invalid' : '' ?>" id="ftanggal" name="ftanggal" placeholder="Enter tanggal " value="<?= date('Y-m-d') ?>" readonly>
                     <div class=" invalid-feedback">
                         <?= form_error('ftanggal') ?>
                     </div>

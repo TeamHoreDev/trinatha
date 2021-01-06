@@ -111,12 +111,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <p>Pengembalian Solar</p>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('jam_kerja_alat') ?>" class="nav-link <?= $this->uri->segment(1) == 'jam_kerja_alat' ? 'active' : '' ?>">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Jam Kerja Alat</p>
-                  </a>
-                </li>
               </ul>
             </li>
             <li class="nav-item has-treeview menu-close">

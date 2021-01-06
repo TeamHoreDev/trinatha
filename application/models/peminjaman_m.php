@@ -35,12 +35,25 @@ class peminjaman_m extends CI_Model
             ],
         ];
     }
-    public function get_all()
+    public function get_all_5k()
     {
         $this->db->select('*');
         $this->db->join('solar', 'solar.kode_transaksi = peminjaman.kode_transaksi', 'left');
         $this->db->join('vendor', 'vendor.id_vendor = peminjaman.id_vendor', 'left');
         $this->db->where('solar.deleted', 0);
+        $this->db->where('solar.tangki', 5000);
+        $this->db->from($this->_table);
+        $this->db->order_by('solar.kode_transaksi', 'DESC');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function get_all_8k()
+    {
+        $this->db->select('*');
+        $this->db->join('solar', 'solar.kode_transaksi = peminjaman.kode_transaksi', 'left');
+        $this->db->join('vendor', 'vendor.id_vendor = peminjaman.id_vendor', 'left');
+        $this->db->where('solar.deleted', 0);
+        $this->db->where('solar.tangki', 8000);
         $this->db->from($this->_table);
         $this->db->order_by('solar.kode_transaksi', 'DESC');
         $query = $this->db->get();

@@ -19,7 +19,8 @@ class Solar extends CI_Controller
 
 	public function penerimaan()
 	{
-		$data['penerimaan'] = $this->penerimaan_m->get_all();
+		$data['penerimaan5k'] = $this->penerimaan_m->get_all_5k();
+		$data['penerimaan8k'] = $this->penerimaan_m->get_all_8k();
 		$this->template->load('shared/index', 'transaksi/solar/penerimaan', $data);
 	}
 	public function create_penerimaan()
@@ -48,7 +49,8 @@ class Solar extends CI_Controller
 	}
 	public function pengambilan()
 	{
-		$data['pengambilan'] = $this->pengambilan_m->get_all();
+		$data['pengambilan5k'] = $this->pengambilan_m->get_all_5k();
+		$data['pengambilan8k'] = $this->pengambilan_m->get_all_8k();
 		$this->template->load('shared/index', 'transaksi/solar/pengambilan', $data);
 	}
 	public function create_pengambilan()
@@ -77,7 +79,8 @@ class Solar extends CI_Controller
 	}
 	public function peminjaman()
 	{
-		$data['peminjaman'] = $this->peminjaman_m->get_all();
+		$data['peminjaman5k'] = $this->peminjaman_m->get_all_5k();
+		$data['peminjaman8k'] = $this->peminjaman_m->get_all_8k();
 		$this->template->load('shared/index', 'transaksi/solar/peminjaman', $data);
 	}
 	public function create_peminjaman()
@@ -106,7 +109,8 @@ class Solar extends CI_Controller
 	}
 	public function pengembalian()
 	{
-		$data['pengembalian'] = $this->pengembalian_m->get_all();
+		$data['pengembalian5k'] = $this->pengembalian_m->get_all_5k();
+		$data['pengembalian8k'] = $this->pengembalian_m->get_all_8k();
 		$this->template->load('shared/index', 'transaksi/solar/pengembalian', $data);
 	}
 	public function create_pengembalian()

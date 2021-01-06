@@ -15,42 +15,100 @@
 <div class="card card-navy">
     <div class="card-header">
         <h2 class="card-title pt-1">List Penerimaan Solar</h2>
-        <a href="<?= base_url('solar/create_penerimaan') ?>" class="btn btn-sm btn-primary float-right"> + Insert</a>
+        <a href="<?= base_url('solar/create_penerimaan') ?>" class="btn btn-sm btn-primary float-right"> + Tambah</a>
     </div>
     <!-- /.card-header -->
     <!-- card-body -->
     <div class="card-body">
-        <table id="TabelPenerimaan" class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>Kode Transaksi</th>
-                    <th>Tanggal</th>
-                    <th>No Surat Jalan</th>
-                    <th>Nama Vendor</th>
-                    <th>Quantity</th>
-                    <th>Tangki</th>
-                    <th>Stok</th>
-                    <th style="width: 10px">Modify</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($penerimaan as $key) : ?>
-                    <tr>
-                        <td><?= $key->kode_transaksi ?></td>
-                        <td><?= $key->tanggal ?></td>
-                        <td><?= $key->no_surat_jalan ?></td>
-                        <td><?= $key->nama_vendor ?></td>
-                        <td><?= $key->solar_in ?></td>
-                        <td><?= $key->tangki ?>L</td>
-                        <td><?= $key->stok ?>L</td>
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'solar/delete/' . $key->id_transaksi ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </td>
-                    </tr>
-                <?php endforeach ?>
-        </table>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Tangki 5000</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Tangki 8000</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Penerimaan Tangki 5000</div>
+                    </div>
+                    <div class="card-body">
+                        <table id="TabelPenerimaan" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Kode Transaksi</th>
+                                    <th>Tanggal</th>
+                                    <th>No Surat Jalan</th>
+                                    <th>Nama Vendor</th>
+                                    <th>Quantity</th>
+                                    <th>Tangki</th>
+                                    <th style="width: 10px">Modify</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($penerimaan5k as $key) : ?>
+                                    <tr>
+                                        <td><?= $key->kode_transaksi ?></td>
+                                        <td><?= $key->tanggal ?></td>
+                                        <td><?= $key->no_surat_jalan ?></td>
+                                        <td><?= $key->nama_vendor ?></td>
+                                        <td><?= $key->solar_in ?></td>
+                                        <td><?= $key->tangki ?>L</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'solar/delete/' . $key->id_transaksi ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Penerimaan Tangki 8000</div>
+                    </div>
+                    <div class="card-body">
+                        <table id="TabelPenerimaan8k" class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Kode Transaksi</th>
+                                    <th>Tanggal</th>
+                                    <th>No Surat Jalan</th>
+                                    <th>Nama Vendor</th>
+                                    <th>Quantity</th>
+                                    <th>Tangki</th>
+                                    <th style="width: 10px">Modify</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($penerimaan8k as $key) : ?>
+                                    <tr>
+                                        <td><?= $key->kode_transaksi ?></td>
+                                        <td><?= $key->tanggal ?></td>
+                                        <td><?= $key->no_surat_jalan ?></td>
+                                        <td><?= $key->nama_vendor ?></td>
+                                        <td><?= $key->solar_in ?></td>
+                                        <td><?= $key->tangki ?>L</td>
+                                        <td>
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'solar/delete/' . $key->id_transaksi ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php endforeach ?>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
@@ -61,6 +119,9 @@
 <script>
     $(document).ready(function() {
         $('#TabelPenerimaan').DataTable({
+            "ordering": false
+        });
+        $('#TabelPenerimaan8k').DataTable({
             "ordering": false
         });
         $('[data-tolltip="tooltip"]').tooltip({
