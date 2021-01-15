@@ -132,7 +132,7 @@ class user_m extends CI_Model
         $this->email = $post['femail'];
         $this->role = $post['frole'];
         $this->username = $post['fusername'];
-        $this->password = md5($post['fpassword']);
+        $this->password = $post['fpassword'];
         $this->deleted = 0;
         $this->db->update($this->_table, $this, array('id_user' => $post['fid_user']));
     }
