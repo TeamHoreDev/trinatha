@@ -8,7 +8,9 @@ class peminjaman_m extends CI_Model
     public $id_peminjaman;
     public $kode_transaksi;
     public $id_vendor;
+    public $id_alat;
     public $status;
+    public $id_user;
 
     public function rules_peminjaman()
     {
@@ -16,6 +18,11 @@ class peminjaman_m extends CI_Model
             [
                 'field' => 'fvendor',
                 'label' => 'Vendor',
+                'rules' => 'required'
+            ],
+            [
+                'field' => 'falat',
+                'label' => 'Alat',
                 'rules' => 'required'
             ],
             [
@@ -35,11 +42,38 @@ class peminjaman_m extends CI_Model
             ],
         ];
     }
+    public function rules_edit_peminjaman()
+    {
+        return [
+            [
+                'field' => 'fvendor',
+                'label' => 'Vendor',
+                'rules' => 'required'
+            ],
+            [
+                'field' => 'falat',
+                'label' => 'Alat',
+                'rules' => 'required'
+            ],
+            [
+                'field' => 'ftangki',
+                'label' => 'Tangki',
+                'rules' => 'required'
+            ],
+            [
+                'field' => 'ftanggal',
+                'label' => 'Tanggal',
+                'rules' => 'required'
+            ],
+        ];
+    }
     public function get_all_5k()
     {
         $this->db->select('*');
         $this->db->join('solar', 'solar.kode_transaksi = peminjaman.kode_transaksi', 'left');
         $this->db->join('vendor', 'vendor.id_vendor = peminjaman.id_vendor', 'left');
+        $this->db->join('alat', 'alat.id_alat = peminjaman.id_alat', 'left');
+        $this->db->join('user', 'user.id_user = peminjaman.id_user', 'left');
         $this->db->where('solar.deleted', 0);
         $this->db->where('solar.tangki', 5000);
         $this->db->from($this->_table);
@@ -52,6 +86,9 @@ class peminjaman_m extends CI_Model
         $this->db->select('*');
         $this->db->join('solar', 'solar.kode_transaksi = peminjaman.kode_transaksi', 'left');
         $this->db->join('vendor', 'vendor.id_vendor = peminjaman.id_vendor', 'left');
+        $this->db->join('alat', 'alat.id_alat = peminjaman.id_alat', 'left');
+        $this->db->join('user', 'user.id_user = peminjaman.id_user', 'left');
+
         $this->db->where('solar.deleted', 0);
         $this->db->where('solar.tangki', 8000);
         $this->db->from($this->_table);
@@ -79,7 +116,6 @@ class peminjaman_m extends CI_Model
         $this->db->where('solar.deleted', 0);
         $this->db->where('peminjaman.id_peminjaman', $id);
         $this->db->from($this->_table);
-        $this->db->order_by('solar.kode_transaksi', 'DESC');
         $query = $this->db->get();
         return $query->row();
     }
@@ -89,8 +125,18 @@ class peminjaman_m extends CI_Model
         $this->id_peminjaman = uniqid('out-');
         $this->kode_transaksi = $post['fkode_transaksi'];
         $this->id_vendor = $post['fvendor'];
+        $this->id_alat = $post['falat'];
+        $this->id_user = $this->session->userdata('id_user');
         $this->status = 0;
         $this->db->insert($this->_table, $this);
+    }
+    public function edit_peminjaman($id)
+    {
+        $post = $this->input->post();
+        $this->db->set('id_vendor', $post['fvendor']);
+        $this->db->set('id_alat', $post['falat']);
+        $this->db->where('id_peminjaman', $id);
+        $this->db->update($this->_table);
     }
     public function update_status($id)
     {

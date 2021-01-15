@@ -82,6 +82,8 @@
         <!-- /.card-body -->
         <div class="card-footer">
             <button type="submit" class="btn btn-success float-right">Simpan</button>
+            <a href="<?= base_url('solar/penerimaan') ?>" class="btn btn-secondary float-left">Batal</a>
+
         </div>
     </form>
 </div>

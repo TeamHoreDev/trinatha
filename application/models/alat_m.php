@@ -8,6 +8,7 @@ class Alat_m extends CI_Model
     public $id_alat;
     public $kode_alat;
     public $nama_alat;
+    public $operator;
     public $deleted;
 
     public function rules()
@@ -21,6 +22,11 @@ class Alat_m extends CI_Model
             [
                 'field' => 'fnama_alat',
                 'label' => 'Nama Alat',
+                'rules' => 'required'
+            ],
+            [
+                'field' => 'foperator',
+                'label' => 'Nama Operator',
                 'rules' => 'required'
             ],
         ];
@@ -39,6 +45,7 @@ class Alat_m extends CI_Model
         $this->id_alat = uniqid('alat-');
         $this->kode_alat = $post['fkode_alat'];
         $this->nama_alat = $post['fnama_alat'];
+        $this->operator = $post['foperator'];
         $this->deleted = 0;
         $this->db->insert($this->_table, $this);
     }
@@ -54,6 +61,7 @@ class Alat_m extends CI_Model
         $this->kode_alat = $post['fkode_alat'];
         $this->nama_alat = $post['fnama_alat'];
         $this->id_alat = $post['fid_alat'];
+        $this->operator = $post['foperator'];
         $this->deleted = 0;
         $this->db->update($this->_table, $this, array('id_alat' => $post['fid_alat']));
     }

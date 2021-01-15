@@ -40,6 +40,7 @@
                                 <tr>
                                     <th>Kode Transaksi</th>
                                     <th>Tanggal</th>
+                                    <th>PIC</th>
                                     <th>No Surat Jalan</th>
                                     <th>Nama Vendor</th>
                                     <th>Quantity</th>
@@ -52,12 +53,14 @@
                                     <tr>
                                         <td><?= $key->kode_transaksi ?></td>
                                         <td><?= $key->tanggal ?></td>
+                                        <td><?= $key->nama_user ?></td>
                                         <td><?= $key->no_surat_jalan ?></td>
                                         <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->solar_in ?></td>
                                         <td><?= $key->tangki ?>L</td>
                                         <td>
                                             <div class="btn-group">
+                                                <a href="<?= base_url('solar/edit_penerimaan/') . $key->id_penerimaan ?>"><button type="button" class="btn btn-default btn-sm" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>
                                                 <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'solar/delete/' . $key->id_transaksi ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
                                             </div>
                                         </td>
@@ -79,6 +82,7 @@
                                 <tr>
                                     <th>Kode Transaksi</th>
                                     <th>Tanggal</th>
+                                    <th>PIC</th>
                                     <th>No Surat Jalan</th>
                                     <th>Nama Vendor</th>
                                     <th>Quantity</th>
@@ -91,6 +95,7 @@
                                     <tr>
                                         <td><?= $key->kode_transaksi ?></td>
                                         <td><?= $key->tanggal ?></td>
+                                        <td><?= $key->nama_user ?></td>
                                         <td><?= $key->no_surat_jalan ?></td>
                                         <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->solar_in ?></td>
@@ -112,7 +117,6 @@
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        <small class="text-muted float-right">Data penerimaan solar pada tanggal 09/05/2020</small>
     </div>
 </div>
 <!-- datatables script -->

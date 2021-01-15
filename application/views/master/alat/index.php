@@ -23,7 +23,7 @@
                 <div class="card card-navy">
                     <div class="card-header">
                         <h3 class="card-title">List Alat</h3>
-                        <a href="<?= base_url('alat/create') ?>" class="btn btn-sm btn-primary float-right"> + Insert</a>
+                        <a href="<?= base_url('alat/create') ?>" class="btn btn-sm btn-primary float-right"> + Tambah</a>
 
                     </div>
                     <!-- /.card-header -->
@@ -35,6 +35,7 @@
                                     <th style="width: 10px">No</th>
                                     <th>Kode Alat</th>
                                     <th>Nama Alat</th>
+                                    <th>Nama Operator</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
                             </thead>
@@ -46,6 +47,7 @@
                                         <td><?= $no++ ?></td>
                                         <td><?= $key->kode_alat ?></td>
                                         <td><?= $key->nama_alat ?></td>
+                                        <td><?= $key->operator ?></td>
                                         <td>
                                             <div class="btn-group">
                                                 <a href="<?= base_url('alat/edit/') . $key->id_alat ?>"><button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>

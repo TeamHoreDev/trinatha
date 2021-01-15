@@ -9,6 +9,7 @@ class pengembalian_m extends CI_Model
     public $id_pengembalian;
     public $kode_transaksi;
     public $id_peminjaman;
+    public $id_user;
 
     public function rules_pengembalian()
     {
@@ -36,6 +37,8 @@ class pengembalian_m extends CI_Model
         $this->db->join('solar', 'solar.kode_transaksi = pengembalian.kode_transaksi', 'left');
         $this->db->join('peminjaman', 'peminjaman.id_peminjaman = pengembalian.id_peminjaman', 'left');
         $this->db->join('vendor', 'vendor.id_vendor = peminjaman.id_vendor', 'left');
+        $this->db->join('user', 'user.id_user = pengembalian.id_user', 'left');
+
         $this->db->where('solar.deleted', 0);
         $this->db->where('solar.tangki', 5000);
         $this->db->from($this->_table);
@@ -49,6 +52,8 @@ class pengembalian_m extends CI_Model
         $this->db->join('solar', 'solar.kode_transaksi = pengembalian.kode_transaksi', 'left');
         $this->db->join('peminjaman', 'peminjaman.id_peminjaman = pengembalian.id_peminjaman', 'left');
         $this->db->join('vendor', 'vendor.id_vendor = peminjaman.id_vendor', 'left');
+        $this->db->join('user', 'user.id_user = pengembalian.id_user', 'left');
+
         $this->db->where('solar.deleted', 0);
         $this->db->where('solar.tangki', 8000);
         $this->db->from($this->_table);
@@ -62,13 +67,13 @@ class pengembalian_m extends CI_Model
         $this->id_pengembalian = uniqid('out-');
         $this->id_peminjaman = $post['fid_peminjaman'];
         $this->kode_transaksi = $post['fkode_transaksi'];
+        $this->id_user = $this->session->userdata('id_user');
         $this->db->insert($this->_table, $this);
     }
     public function Delete($id)
     {
-        $this->db->set('deleted', 1);
-        $this->db->where('id_alat', $id);
-        $this->db->update($this->_table);
+        $this->db->where('id_pe', $id);
+        $this->db->delete($this->_table);
     }
 }
 

@@ -8,7 +8,7 @@ class pengambilan_m extends CI_Model
     public $id_pengambilan;
     public $kode_transaksi;
     public $id_alat;
-    public $operator;
+    public $id_user;
     public $jam;
 
     public function rules_pengambilan()
@@ -17,11 +17,6 @@ class pengambilan_m extends CI_Model
             [
                 'field' => 'falat',
                 'label' => 'Kode Alat',
-                'rules' => 'required'
-            ],
-            [
-                'field' => 'foperator',
-                'label' => 'Nama Operator',
                 'rules' => 'required'
             ],
             [
@@ -51,6 +46,7 @@ class pengambilan_m extends CI_Model
         $this->db->select('*');
         $this->db->join('solar', 'solar.kode_transaksi = pengambilan.kode_transaksi', 'left');
         $this->db->join('alat', 'alat.id_alat = pengambilan.id_alat', 'left');
+        $this->db->join('user', 'user.id_user = pengambilan.id_user', 'left');
         $this->db->where('solar.deleted', 0);
         $this->db->where('solar.tangki', 5000);
         $this->db->from($this->_table);
@@ -63,6 +59,7 @@ class pengambilan_m extends CI_Model
         $this->db->select('*');
         $this->db->join('solar', 'solar.kode_transaksi = pengambilan.kode_transaksi', 'left');
         $this->db->join('alat', 'alat.id_alat = pengambilan.id_alat', 'left');
+        $this->db->join('user', 'user.id_user = pengambilan.id_user', 'left');
         $this->db->where('solar.deleted', 0);
         $this->db->where('solar.tangki', 8000);
         $this->db->from($this->_table);
@@ -76,8 +73,8 @@ class pengambilan_m extends CI_Model
         $this->id_pengambilan = uniqid('out-');
         $this->kode_transaksi = $post['fkode_transaksi'];
         $this->id_alat = $post['falat'];
-        $this->operator = $post['foperator'];
         $this->jam = $post['fjam'];
+        $this->id_user = $this->session->userdata('id_user');
         $this->db->insert($this->_table, $this);
     }
     public function Delete($id)

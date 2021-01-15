@@ -71,10 +71,9 @@
                     <label for="frole">Role</label>
                     <select class="form-control <?php echo form_error('frole') ? 'is-invalid' : '' ?>" id="frole" name="frole">
                         <option hidden value="" selected>Pilih frole</option>
-                        <option value="1">Sistem Admin</option>
-                        <option value="2">Admin Operasional</option>
-                        <option value="3">Fuelman</option>
-                        <option value="4">Supervisor</option>
+                        <option value="1">Admin Operasional</option>
+                        <option value="2">Fuelman</option>
+                        <option value="3">Supervisor</option>
                     </select>
                     <div class="invalid-feedback">
                         <?php echo form_error('frole') ?>
@@ -84,6 +83,7 @@
             <!-- /.card-body -->
             <div class="card-footer">
                 <button type="submit" class="btn btn-primary float-right">Daftar</button>
+                <a href="<?= base_url('user') ?>" class="btn btn-secondary float-left">Batal</a>
             </div>
         </form>
     </div>

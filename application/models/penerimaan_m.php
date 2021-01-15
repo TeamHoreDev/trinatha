@@ -9,6 +9,7 @@ class penerimaan_m extends CI_Model
     public $id_penerimaan;
     public $kode_transaksi;
     public $id_vendor;
+    public $id_user;
     public $no_surat_jalan;
 
     public function rules_penerimaan()
@@ -51,6 +52,7 @@ class penerimaan_m extends CI_Model
         $this->db->select('*');
         $this->db->join('solar', 'solar.kode_transaksi = penerimaan.kode_transaksi', 'left');
         $this->db->join('vendor', 'vendor.id_vendor = penerimaan.id_vendor', 'left');
+        $this->db->join('user', 'user.id_user = penerimaan.id_user', 'left');
         $this->db->where('solar.deleted', 0);
         $this->db->where('solar.tangki', 5000);
         $this->db->from($this->_table);
@@ -63,6 +65,7 @@ class penerimaan_m extends CI_Model
         $this->db->select('*');
         $this->db->join('solar', 'solar.kode_transaksi = penerimaan.kode_transaksi', 'left');
         $this->db->join('vendor', 'vendor.id_vendor = penerimaan.id_vendor', 'left');
+        $this->db->join('user', 'user.id_user = penerimaan.id_user', 'left');
         $this->db->where('solar.deleted', 0);
         $this->db->where('solar.tangki', 8000);
         $this->db->from($this->_table);
@@ -77,6 +80,7 @@ class penerimaan_m extends CI_Model
         $this->kode_transaksi = $post['fkode_transaksi'];
         $this->id_vendor = $post['fvendor'];
         $this->no_surat_jalan = $post['fno_surat_jalan'];
+        $this->id_user = $this->session->userdata('id_user');
         $this->db->insert($this->_table, $this);
     }
     public function Delete($id)

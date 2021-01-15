@@ -54,6 +54,7 @@
                         <?= form_error('fvendor') ?>
                     </div>
                 </div>
+
             </div>
             <div class="row">
                 <div class="form-group col-6">
@@ -63,11 +64,25 @@
                         <?= form_error('fsolar_out') ?>
                     </div>
                 </div>
+                <div class="form-group col-6">
+                    <label for="falat">Kode Alat</label>
+                    <select class="custom-select <?= form_error('falat') ? 'is-invalid' : '' ?>" id="falat" name="falat">
+                        <option selected value="" hidden>Pilih Alat</option>
+                        <?php foreach ($alat as $key) : ?>
+                            <option value="<?= $key->id_alat ?>" <?= $this->input->post('falat') == $key->id_alat ? 'selected' : '' ?>><?= $key->kode_alat . " - " . $key->nama_alat ?></option>
+                        <?php endforeach ?>
+                    </select>
+                    <div class="invalid-feedback">
+                        <?= form_error('falat') ?>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
             <button type="submit" class="btn btn-primary float-right">Simpan</button>
+            <a href="<?= base_url('solar/peminjaman') ?>" class="btn btn-secondary float-left">Batal</a>
+
         </div>
     </form>
 </div>

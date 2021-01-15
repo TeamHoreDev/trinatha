@@ -7,6 +7,7 @@ class Solar extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
+		check_not_login();
 		$this->load->model('solar_m');
 		$this->load->model('vendor_m');
 		$this->load->model('penerimaan_m');
@@ -90,6 +91,7 @@ class Solar extends CI_Controller
 		$validation = $this->form_validation;
 		$validation->set_rules($peminjaman->rules_peminjaman());
 		if ($validation->run() == FALSE) {
+			$data['alat'] = $this->alat_m->get_all();
 			$data['kode'] = $this->solar_m->cek_kode_transaksi();
 			$data['vendor'] = $this->vendor_m->get_all();
 			$data['stok_5000'] = $this->solar_m->get_stok('5000');
@@ -105,6 +107,27 @@ class Solar extends CI_Controller
 					redirect('solar/peminjaman', 'refresh');
 				}
 			}
+		}
+	}
+	public function edit_peminjaman($id)
+	{
+		$solar  = $this->solar_m;
+		$peminjaman  = $this->peminjaman_m;
+		$validation = $this->form_validation;
+		$validation->set_rules($peminjaman->rules_edit_peminjaman());
+		if ($validation->run() == FALSE) {
+			$data['alat'] = $this->alat_m->get_all();
+			$data['kode'] = $this->solar_m->cek_kode_transaksi();
+			$data['vendor'] = $this->vendor_m->get_all();
+			$data['stok_5000'] = $this->solar_m->get_stok('5000');
+			$data['stok_8000'] = $this->solar_m->get_stok('8000');
+			$data['peminjaman'] = $this->peminjaman_m->get_by_id($id);
+			$this->template->load('shared/index', 'transaksi/solar/edit_peminjaman', $data);
+		} else {
+			$solar->edit_solar_out();
+			$peminjaman->edit_peminjaman($id);
+			$this->session->set_flashdata('success', 'Data peminjaman berhasil diupdate!');
+			redirect('solar/peminjaman', 'refresh');
 		}
 	}
 	public function pengembalian()

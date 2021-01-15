@@ -57,11 +57,17 @@ class solar_m extends CI_Model
         $this->deleted = 0;
         $this->db->insert($this->_table, $this);
     }
+    public function edit_solar_out()
+    {
+        $post = $this->input->post();
+        $this->db->set('tangki', $post['ftangki']);
+        $this->db->where('kode_transaksi', $post['fkode']);
+        $this->db->update($this->_table);
+    }
     public function delete($id)
     {
-        $this->db->set('deleted', 1);
         $this->db->where('id_transaksi', $id);
-        $this->db->update($this->_table);
+        $this->db->delete($this->_table);
     }
     public function update($post)
     {
@@ -83,9 +89,13 @@ class solar_m extends CI_Model
     }
     public function get_stok($tangki)
     {
-        $query = $this->db->query("SELECT stok FROM solar WHERE tangki= '$tangki' AND deleted = 0 ORDER BY id_transaksi DESC LIMIT 1");
+        $query = $this->db->query("SELECT SUM(solar_in)as solar_masuk, SUM(solar_out) as solar_keluar, SUM(solar_in) - SUM(solar_out) as stok_sekarang FROM solar WHERE tangki= '$tangki' ORDER BY id_transaksi DESC LIMIT 1");
         $hasil = $query->row();
-        return $hasil->stok;
+        if ($hasil == null) {
+            return $hasil->stok_sekarang;
+        } else {
+            return '0';
+        }
     }
 }
 

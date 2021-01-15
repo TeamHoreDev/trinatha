@@ -20,7 +20,7 @@
         <div class="card card-navy">
             <div class="card-header">
                 <h3 class="card-title">List Vendor</h3>
-                <a href="<?= base_url('vendor/create') ?>" class="btn btn-sm btn-primary float-right"> + Insert</a>
+                <a href="<?= base_url('vendor/create') ?>" class="btn btn-sm btn-primary float-right"> + Tambah</a>
 
             </div>
             <!-- /.card-header -->
@@ -50,7 +50,6 @@
                                     <td><?php echo $dt->alamat ?></td>
                                     <td>
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-detail" data-tolltip="tooltip" data-placement="top" title="Detail"><i class="fas fa-eye"></i></button>
 
                                             <a href="<?= base_url('vendor/edit/') . $dt->id_vendor ?>"><button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>
 

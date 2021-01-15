@@ -40,10 +40,11 @@
                                 <tr>
                                     <th>Kode Transaksi</th>
                                     <th>Tanggal / Jam</th>
+                                    <th>PIC</th>
                                     <th>Tangki</th>
                                     <th>Nama Alat</th>
-                                    <th>Quantity</th>
                                     <th>Operator</th>
+                                    <th>Quantity</th>
                                     <th>Stok</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
@@ -53,10 +54,11 @@
                                     <tr>
                                         <td><?= $key->kode_transaksi ?></td>
                                         <td><?= $key->tanggal . " / " . $key->jam ?></td>
+                                        <td><?= $key->nama_user ?></td>
                                         <td><?= $key->tangki ?>L</td>
                                         <td><?= $key->nama_alat ?></td>
-                                        <td><?= $key->solar_out ?></td>
                                         <td><?= $key->operator ?></td>
+                                        <td><?= $key->solar_out ?></td>
                                         <td><?= $key->stok ?>L</td>
                                         <td>
                                             <div class="btn-group">
@@ -81,10 +83,11 @@
                                 <tr>
                                     <th>Kode Transaksi</th>
                                     <th>Tanggal / Jam</th>
+                                    <th>PIC</th>
                                     <th>Tangki</th>
                                     <th>Nama Alat</th>
-                                    <th>Quantity</th>
                                     <th>Operator</th>
+                                    <th>Quantity</th>
                                     <th>Stok</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
@@ -94,10 +97,11 @@
                                     <tr>
                                         <td><?= $key->kode_transaksi ?></td>
                                         <td><?= $key->tanggal . " / " . $key->jam ?></td>
+                                        <td><?= $key->nama_user ?></td>
                                         <td><?= $key->tangki ?>L</td>
                                         <td><?= $key->nama_alat ?></td>
-                                        <td><?= $key->solar_out ?></td>
                                         <td><?= $key->operator ?></td>
+                                        <td><?= $key->solar_out ?></td>
                                         <td><?= $key->stok ?>L</td>
                                         <td>
                                             <div class="btn-group">
@@ -116,7 +120,6 @@
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        <small class="text-muted float-right">Data pengambilan solar pada tanggal 09/05/2020</small>
     </div>
 </div>
 <!-- /.card -->

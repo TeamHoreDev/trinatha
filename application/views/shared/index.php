@@ -58,10 +58,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
           <div class="image">
-            <img src="https://avatars2.githubusercontent.com/u/63731205?s=200&v=4" class="img-circle elevation-2" alt="User Image">
+            <img src="<?= base_url('assets/images/user.png') ?>" class="img-circle elevation-2" alt="User Image">
           </div>
           <div class="info">
-            <a href="#" class="d-block">Team Hore Dev</a>
+            <a href="#" class="d-block"><?= ucwords($this->session->userdata('nama_user')) ?></a>
           </div>
         </div>
 
@@ -256,7 +256,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
       <div class="modal-footer justify-content-between">
         <button type="button" class="btn  btn-secondary" data-dismiss="modal">Batal</button>
-        <button type="button" class="btn  btn-danger">Logout</button>
+        <a type="button" class="btn  btn-danger" href="<?= site_url('auth/logout') ?>">Logout</a>
+
       </div>
     </div>
     <!-- /.modal-content -->

@@ -40,10 +40,19 @@
                             <?= form_error('fnama_alat') ?>
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="foperator">Nama Operator</label>
+                        <input type="text" class="form-control <?= form_error('foperator') ? 'is-invalid' : '' ?>" id="foperator" name="foperator" placeholder="Enter Nama Alat">
+                        <div class="invalid-feedback">
+                            <?= form_error('foperator') ?>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary float-right">Simpan</button>
+                    <a href="<?= base_url('alat') ?>" class="btn btn-secondary float-left">Batal</a>
+
                 </div>
             </form>
         </div>

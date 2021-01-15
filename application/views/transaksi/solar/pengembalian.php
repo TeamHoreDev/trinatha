@@ -41,6 +41,7 @@
                                     <th>Kode Transaksi</th>
                                     <th>Vendor</th>
                                     <th>Tanggal</th>
+                                    <th>PIC</th>
                                     <th>Qty Pengembalian</th>
                                     <th>Tanki</th>
                                     <th>Stok</th>
@@ -53,6 +54,7 @@
                                         <td><?= $key->kode_transaksi ?></td>
                                         <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->tanggal ?></td>
+                                        <td><?= $key->nama_user ?></td>
                                         <td><?= $key->solar_in ?>L</td>
                                         <td><?= $key->tangki ?>L</td>
                                         <td><?= $key->stok ?></td>
@@ -80,6 +82,7 @@
                                     <th>Kode Transaksi</th>
                                     <th>Vendor</th>
                                     <th>Tanggal</th>
+                                    <th>PIC</th>
                                     <th>Qty Pengembalian</th>
                                     <th>Tanki</th>
                                     <th>Stok</th>
@@ -92,6 +95,7 @@
                                         <td><?= $key->kode_transaksi ?></td>
                                         <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->tanggal ?></td>
+                                        <td><?= $key->nama_user ?></td>
                                         <td><?= $key->solar_in ?>L</td>
                                         <td><?= $key->tangki ?>L</td>
                                         <td><?= $key->stok ?></td>
@@ -112,7 +116,6 @@
     </div>
     <!-- /.card-body -->
     <div class="card-footer">
-        <small class="text-muted float-right">Data Pengembalian solar pada tanggal 09/05/2020</small>
     </div>
 
 </div>
