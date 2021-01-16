@@ -62,6 +62,7 @@
                                         <td><?= $key->stok ?>L</td>
                                         <td>
                                             <div class="btn-group">
+                                                <a href="<?= base_url('solar/edit_pengambilan/') . $key->id_pengambilan ?>"><button type="button" class="btn btn-default btn-sm" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>
                                                 <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'solar/delete/' . $key->id_transaksi ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
                                             </div>
                                         </td>
@@ -105,6 +106,7 @@
                                         <td><?= $key->stok ?>L</td>
                                         <td>
                                             <div class="btn-group">
+                                                <a href="<?= base_url('solar/edit_pengambilan/') . $key->id_pengambilan ?>"><button type="button" class="btn btn-default btn-sm" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>
                                                 <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'solar/delete/' . $key->id_transaksi ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
                                             </div>
                                         </td>

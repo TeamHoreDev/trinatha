@@ -47,6 +47,17 @@ class penerimaan_m extends CI_Model
             ],
         ];
     }
+    public function get_by_id($id)
+    {
+        $this->db->select('*');
+        $this->db->join('solar', 'solar.kode_transaksi = penerimaan.kode_transaksi', 'left');
+        $this->db->join('vendor', 'vendor.id_vendor = penerimaan.id_vendor', 'left');
+        $this->db->where('solar.deleted', 0);
+        $this->db->where('penerimaan.id_penerimaan', $id);
+        $this->db->from($this->_table);
+        $query = $this->db->get();
+        return $query->row();
+    }
     public function get_all_5k()
     {
         $this->db->select('*');
@@ -82,6 +93,15 @@ class penerimaan_m extends CI_Model
         $this->no_surat_jalan = $post['fno_surat_jalan'];
         $this->id_user = $this->session->userdata('id_user');
         $this->db->insert($this->_table, $this);
+    }
+    public function edit_penerimaan($id)
+    {
+        $post = $this->input->post();
+        $this->db->set('no_surat_jalan', $post['fno_surat_jalan']);
+        $this->db->set('id_vendor', $post['fvendor']);
+        $this->db->set('id_user', $this->session->userdata('id_user'));
+        $this->db->where('id_penerimaan', $id);
+        $this->db->update($this->_table);
     }
     public function Delete($id)
     {

@@ -15,7 +15,6 @@
 <section class="content">
   <div class="container-fluid">
     <!-- Summary card -->
-
     <!-- /.row -->
     <!-- Stok solar sekarang -->
     <div class="row">
@@ -48,7 +47,7 @@
                         <?php if ($stok_5000 < 1500) { ?>
                           <div class="alert alert-danger" role="alert">
                             <i class="fas fa-exclamation-circle"></i>
-                            Stok solar kurang dari 1000 Liter, segera lakukan <a href="#" class="alert-link">Pengisian Solar</a>
+                            Stok solar kurang dari 1500 Liter, segera lakukan <a href="<?= base_url('solar/create_penerimaan') ?>" class="alert-link">Pengisian Solar</a>
                           </div>
                         <?php } ?>
                       </div>
@@ -80,7 +79,7 @@
                         <?php if ($stok_8000 < 2000) { ?>
                           <div class="alert alert-danger" role="alert">
                             <i class="fas fa-exclamation-circle"></i>
-                            Stok solar kurang dari 2000 Liter, segera lakukan <a href="#" class="alert-link">Pengisian Solar</a>
+                            Stok solar kurang dari 2000 Liter, segera lakukan <a href="<?= base_url('solar/create_penerimaan') ?>" class="alert-link">Pengisian Solar</a>
                           </div>
                         <?php } ?>
                       </div>

@@ -33,7 +33,7 @@ class pengembalian_m extends CI_Model
     }
     public function get_all_5k()
     {
-        $this->db->select('*');
+        $this->db->select('*, peminjaman.kode_transaksi as kode_peminjaman, pengembalian.kode_transaksi as kode_pengembalian');
         $this->db->join('solar', 'solar.kode_transaksi = pengembalian.kode_transaksi', 'left');
         $this->db->join('peminjaman', 'peminjaman.id_peminjaman = pengembalian.id_peminjaman', 'left');
         $this->db->join('vendor', 'vendor.id_vendor = peminjaman.id_vendor', 'left');
@@ -48,18 +48,27 @@ class pengembalian_m extends CI_Model
     }
     public function get_all_8k()
     {
-        $this->db->select('*');
+        $this->db->select('*, peminjaman.kode_transaksi as kode_peminjaman, pengembalian.kode_transaksi as kode_pengembalian');
         $this->db->join('solar', 'solar.kode_transaksi = pengembalian.kode_transaksi', 'left');
         $this->db->join('peminjaman', 'peminjaman.id_peminjaman = pengembalian.id_peminjaman', 'left');
         $this->db->join('vendor', 'vendor.id_vendor = peminjaman.id_vendor', 'left');
         $this->db->join('user', 'user.id_user = pengembalian.id_user', 'left');
-
         $this->db->where('solar.deleted', 0);
         $this->db->where('solar.tangki', 8000);
         $this->db->from($this->_table);
         $this->db->order_by('solar.kode_transaksi', 'DESC');
         $query = $this->db->get();
         return $query->result();
+    }
+    public function get_by_id($id1)
+    {
+        $this->db->select('*');
+        $this->db->join('solar', 'solar.kode_transaksi = pengembalian.kode_transaksi', 'left');
+        $this->db->where('solar.deleted', 0);
+        $this->db->where('pengembalian.id_pengembalian', $id1);
+        $this->db->from($this->_table);
+        $query = $this->db->get();
+        return $query->row();
     }
     public function add_pengembalian()
     {
@@ -70,6 +79,7 @@ class pengembalian_m extends CI_Model
         $this->id_user = $this->session->userdata('id_user');
         $this->db->insert($this->_table, $this);
     }
+
     public function Delete($id)
     {
         $this->db->where('id_pe', $id);

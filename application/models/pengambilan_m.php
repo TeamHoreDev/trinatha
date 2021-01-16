@@ -67,6 +67,17 @@ class pengambilan_m extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    public function get_by_id($id)
+    {
+        $this->db->select('*');
+        $this->db->join('solar', 'solar.kode_transaksi = pengambilan.kode_transaksi', 'left');
+        $this->db->join('alat', 'alat.id_alat = pengambilan.id_alat', 'left');
+        $this->db->where('solar.deleted', 0);
+        $this->db->where('pengambilan.id_pengambilan', $id);
+        $this->db->from($this->_table);
+        $query = $this->db->get();
+        return $query->row();
+    }
     public function add_pengambilan()
     {
         $post = $this->input->post();
@@ -76,6 +87,14 @@ class pengambilan_m extends CI_Model
         $this->jam = $post['fjam'];
         $this->id_user = $this->session->userdata('id_user');
         $this->db->insert($this->_table, $this);
+    }
+    public function edit_pengambilan($id)
+    {
+        $post = $this->input->post();
+        $this->db->set('id_alat', $post['falat']);
+        $this->db->set('id_user', $this->session->userdata('id_user'));
+        $this->db->where('id_pengambilan', $id);
+        $this->db->update($this->_table);
     }
     public function Delete($id)
     {

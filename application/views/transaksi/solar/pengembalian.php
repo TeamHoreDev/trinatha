@@ -14,7 +14,7 @@
 </section>
 <div class="card card-navy">
     <div class="card-header">
-        <h2 class="card-title pt-1">List Pengambalian Solar</h2>
+        <h2 class="card-title pt-1">List Pengembalian Solar</h2>
         <a href="<?= base_url('solar/create_pengembalian') ?>" class="btn btn-sm btn-primary float-right"> + Tambah</a>
     </div>
     <!-- /.card-header -->
@@ -51,7 +51,7 @@
                             <tbody>
                                 <?php foreach ($pengembalian5k as $key) : ?>
                                     <tr>
-                                        <td><?= $key->kode_transaksi ?></td>
+                                        <td><?= $key->kode_pengembalian ?></td>
                                         <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->tanggal ?></td>
                                         <td><?= $key->nama_user ?></td>
@@ -60,6 +60,7 @@
                                         <td><?= $key->stok ?></td>
                                         <td>
                                             <div class="btn-group">
+                                                <a href="<?= base_url('solar/edit_pengembalian/') . $key->id_pengembalian . '/' . $key->id_peminjaman  ?>"><button type="button" class="btn btn-default btn-sm" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>
                                                 <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'solar/delete_pengembalian/' . $key->id_transaksi . '/' . $key->kode_transaksi ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
                                             </div>
                                         </td>
@@ -92,7 +93,7 @@
                             <tbody>
                                 <?php foreach ($pengembalian8k as $key) : ?>
                                     <tr>
-                                        <td><?= $key->kode_transaksi ?></td>
+                                        <td><?= $key->kode_pengembalian ?></td>
                                         <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->tanggal ?></td>
                                         <td><?= $key->nama_user ?></td>
@@ -101,6 +102,7 @@
                                         <td><?= $key->stok ?></td>
                                         <td>
                                             <div class="btn-group">
+                                                <a href="<?= base_url('solar/edit_pengembalian/') . $key->id_pengembalian . '/' . $key->id_peminjaman ?>"><button type="button" class="btn btn-default btn-sm" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>
                                                 <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'solar/delete_pengembalian/' . $key->id_transaksi . '/' . $key->kode_transaksi ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>
                                             </div>
                                         </td>
