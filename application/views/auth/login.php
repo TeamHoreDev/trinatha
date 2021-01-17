@@ -32,7 +32,7 @@
             <img src="<?= base_url() . 'assets/images/logo.png' ?>" alt="AdminLTE Logo" class="brand-image " style="width: 100px;">
         </div>
         <div class="login-logo">
-            <a href="index2.html"><b>Trinatha</b> Login</a>
+            <a href="index2.html" style="color: #174D6C;"><b>Trinatha</b> Login</a>
         </div>
     </div>
     <!-- /.login-logo -->

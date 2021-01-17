@@ -38,13 +38,19 @@ class Solar extends CI_Controller
 			$this->template->load('shared/index', 'transaksi/solar/create_penerimaan', $data);
 		} else {
 			$post = $this->input->post(null, TRUE);
-			$solar->add_solar_in($post);
-			if ($this->db->affected_rows() > 0) {
-				$penerimaan->add_penerimaan($post);
+			$vall = $this->solar_m->validation_solar_in($post['fsolar_in'], $post['ftangki']);
+			if ($vall == true) {
+				$solar->add_solar_in($post);
 				if ($this->db->affected_rows() > 0) {
-					$this->session->set_flashdata('success', 'Data penerimaan berhasil disimpan!');
-					redirect('solar/penerimaan', 'refresh');
+					$penerimaan->add_penerimaan($post);
+					if ($this->db->affected_rows() > 0) {
+						$this->session->set_flashdata('success', 'Data penerimaan berhasil disimpan!');
+						redirect('solar/penerimaan', 'refresh');
+					}
 				}
+			} else {
+				$this->session->set_flashdata('error', 'Stok Solar ditangki melebihi batas!');
+				redirect('solar/create_penerimaan', 'refresh');
 			}
 		}
 	}
@@ -63,10 +69,17 @@ class Solar extends CI_Controller
 			$data['penerimaan'] = $this->penerimaan_m->get_by_id($id);
 			$this->template->load('shared/index', 'transaksi/solar/edit_penerimaan', $data);
 		} else {
-			$solar->edit_solar_in();
-			$penerimaan->edit_penerimaan($id);
-			$this->session->set_flashdata('success', 'Data penerimaan berhasil diupdate!');
-			redirect('solar/penerimaan', 'refresh');
+			$post = $this->input->post(null, TRUE);
+			$vall = $this->solar_m->validation_solar_in($post['fsolar_in'], $post['ftangki']);
+			if ($vall == true) {
+				$solar->edit_solar_in();
+				$penerimaan->edit_penerimaan($id);
+				$this->session->set_flashdata('success', 'Data penerimaan berhasil diupdate!');
+				redirect('solar/penerimaan', 'refresh');
+			} else {
+				$this->session->set_flashdata('error', 'Stok Solar ditangki melebihi batas!');
+				redirect('solar/penerimaan', 'refresh');
+			}
 		}
 	}
 	// PENGAMBILAN
@@ -90,13 +103,19 @@ class Solar extends CI_Controller
 			$this->template->load('shared/index', 'transaksi/solar/create_pengambilan', $data);
 		} else {
 			$post = $this->input->post(null, TRUE);
-			$solar->add_solar_out($post);
-			if ($this->db->affected_rows() > 0) {
-				$pengambilan->add_pengambilan($post);
+			$vall = $this->solar_m->validation_solar_out($post['fsolar_out'], $post['ftangki']);
+			if ($vall == true) {
+				$solar->add_solar_out($post);
 				if ($this->db->affected_rows() > 0) {
-					$this->session->set_flashdata('success', 'Data pengambilan berhasil disimpan!');
-					redirect('solar/pengambilan', 'refresh');
+					$pengambilan->add_pengambilan($post);
+					if ($this->db->affected_rows() > 0) {
+						$this->session->set_flashdata('success', 'Data pengambilan berhasil disimpan!');
+						redirect('solar/pengambilan', 'refresh');
+					}
 				}
+			} else {
+				$this->session->set_flashdata('error', 'Stok solar pada tangki tidak cukup!');
+				redirect('solar/create_pengambilan', 'refresh');
 			}
 		}
 	}
@@ -115,10 +134,17 @@ class Solar extends CI_Controller
 			$data['pengambilan'] = $this->pengambilan_m->get_by_id($id);
 			$this->template->load('shared/index', 'transaksi/solar/edit_pengambilan', $data);
 		} else {
-			$solar->edit_solar_out();
-			$pengambilan->edit_pengambilan($id);
-			$this->session->set_flashdata('success', 'Data pengambilan berhasil diupdate!');
-			redirect('solar/pengambilan', 'refresh');
+			$post = $this->input->post(null, TRUE);
+			$vall = $this->solar_m->validation_solar_out($post['fsolar_out'], $post['ftangki']);
+			if ($vall == true) {
+				$solar->edit_solar_out();
+				$pengambilan->edit_pengambilan($id);
+				$this->session->set_flashdata('success', 'Data pengambilan berhasil diupdate!');
+				redirect('solar/pengambilan', 'refresh');
+			} else {
+				$this->session->set_flashdata('error', 'Stok solar pada tangki tidak cukup!');
+				redirect('solar/pengambilan', 'refresh');
+			}
 		}
 	}
 	// PEMINJAMAN
@@ -143,13 +169,20 @@ class Solar extends CI_Controller
 			$this->template->load('shared/index', 'transaksi/solar/create_peminjaman', $data);
 		} else {
 			$post = $this->input->post(null, TRUE);
-			$solar->add_solar_out($post);
-			if ($this->db->affected_rows() > 0) {
-				$peminjaman->add_peminjaman($post);
+			$vall = $this->solar_m->validation_solar_out($post['fsolar_out'], $post['ftangki']);
+			if ($vall == true) {
+				$post = $this->input->post(null, TRUE);
+				$solar->add_solar_out($post);
 				if ($this->db->affected_rows() > 0) {
-					$this->session->set_flashdata('success', 'Data peminjaman berhasil disimpan!');
-					redirect('solar/peminjaman', 'refresh');
+					$peminjaman->add_peminjaman($post);
+					if ($this->db->affected_rows() > 0) {
+						$this->session->set_flashdata('success', 'Data peminjaman berhasil disimpan!');
+						redirect('solar/peminjaman', 'refresh');
+					}
 				}
+			} else {
+				$this->session->set_flashdata('error', 'Stok solar pada tangki tidak cukup!');
+				redirect('solar/create_peminjaman', 'refresh');
 			}
 		}
 	}
@@ -168,10 +201,17 @@ class Solar extends CI_Controller
 			$data['peminjaman'] = $this->peminjaman_m->get_by_id($id);
 			$this->template->load('shared/index', 'transaksi/solar/edit_peminjaman', $data);
 		} else {
-			$solar->edit_solar_out();
-			$peminjaman->edit_peminjaman($id);
-			$this->session->set_flashdata('success', 'Data peminjaman berhasil diupdate!');
-			redirect('solar/peminjaman', 'refresh');
+			$post = $this->input->post(null, TRUE);
+			$vall = $this->solar_m->validation_solar_out($post['fsolar_out'], $post['ftangki']);
+			if ($vall == true) {
+				$solar->edit_solar_out();
+				$peminjaman->edit_peminjaman($id);
+				$this->session->set_flashdata('success', 'Data peminjaman berhasil diupdate!');
+				redirect('solar/peminjaman', 'refresh');
+			} else {
+				$this->session->set_flashdata('error', 'Stok solar pada tangki tidak cukup!');
+				redirect('solar/peminjaman', 'refresh');
+			}
 		}
 	}
 	// PENGEMBALIAN
@@ -201,14 +241,20 @@ class Solar extends CI_Controller
 			$this->template->load('shared/index', 'transaksi/solar/create_pengembalian_form', $data);
 		} else {
 			$post = $this->input->post(null, TRUE);
-			$solar->add_solar_in($post);
-			if ($this->db->affected_rows() > 0) {
-				$pengembalian->add_pengembalian($post);
-				$peminjaman->update_status($id);
+			$vall = $this->solar_m->validation_solar_in($post['fsolar_in'], $post['ftangki']);
+			if ($vall == true) {
+				$solar->add_solar_in($post);
 				if ($this->db->affected_rows() > 0) {
-					$this->session->set_flashdata('success', 'Data pengembalian berhasil disimpan!');
-					redirect('solar/pengembalian', 'refresh');
+					$pengembalian->add_pengembalian($post);
+					$peminjaman->update_status($id);
+					if ($this->db->affected_rows() > 0) {
+						$this->session->set_flashdata('success', 'Data pengembalian berhasil disimpan!');
+						redirect('solar/pengembalian', 'refresh');
+					}
 				}
+			} else {
+				$this->session->set_flashdata('error', 'Stok Solar ditangki melebihi batas!');
+				redirect('solar/pengembalian', 'refresh');
 			}
 		}
 	}
@@ -228,9 +274,16 @@ class Solar extends CI_Controller
 			$data['pengembalian'] = $this->pengembalian_m->get_by_id($id1);
 			$this->template->load('shared/index', 'transaksi/solar/edit_pengembalian', $data);
 		} else {
-			$solar->edit_solar_in();
-			$this->session->set_flashdata('success', 'Data pengembalian berhasil diupdate!');
-			redirect('solar/pengembalian', 'refresh');
+			$post = $this->input->post(null, TRUE);
+			$vall = $this->solar_m->validation_solar_in($post['fsolar_in'], $post['ftangki']);
+			if ($vall == true) {
+				$solar->edit_solar_in();
+				$this->session->set_flashdata('success', 'Data pengembalian berhasil diupdate!');
+				redirect('solar/pengembalian', 'refresh');
+			} else {
+				$this->session->set_flashdata('error', 'Stok Solar ditangki melebihi batas!');
+				redirect('solar/pengembalian', 'refresh');
+			}
 		}
 	}
 	public function test()

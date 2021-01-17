@@ -73,11 +73,18 @@
                         <?= form_error('fsolar_out') ?>
                     </div>
                 </div>
+                <div class="form-group col-6">
+                    <label for="fketerangan">Keterangan</label>
+                    <textarea type="text" class="form-control <?= form_error('fketerangan') ? 'is-invalid' : '' ?>" id="fketerangan" name="fketerangan" placeholder="Enter keterangan" "><?= $pengambilan->keterangan ?></textarea>
+                    <div class=" invalid-feedback">
+                        <?= form_error('fketerangan') ?>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary float-right">Simpan</button>
+            <button type="submit" class="btn btn-primary float-right">Update</button>
             <a href="<?= base_url('solar/pengambilan') ?>" class="btn btn-secondary float-left">Batal</a>
         </div>
     </form>

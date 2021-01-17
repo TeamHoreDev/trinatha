@@ -106,6 +106,38 @@ class solar_m extends CI_Model
             return $hasil->stok_sekarang;
         }
     }
+    public function validation_solar_in($qty, $tangki)
+    {
+        if ($tangki == 5000) {
+            if ($this->get_stok($tangki) + $qty > 5000) {
+                return FALSE;
+            } else {
+                return TRUE;
+            }
+        } elseif ($tangki == 8000) {
+            if ($this->get_stok($tangki) + $qty > 8000) {
+                return FALSE;
+            } else {
+                return TRUE;
+            }
+        }
+    }
+    public function validation_solar_out($qty, $tangki)
+    {
+        if ($tangki == 5000) {
+            if ($this->get_stok($tangki) - $qty < 0) {
+                return FALSE;
+            } else {
+                return TRUE;
+            }
+        } elseif ($tangki == 8000) {
+            if ($this->get_stok($tangki) - $qty < 0) {
+                return FALSE;
+            } else {
+                return TRUE;
+            }
+        }
+    }
 }
 
 /* End of file solar_m.php */

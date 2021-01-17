@@ -1,4 +1,3 @@
-<?php var_dump($peminjaman) ?>
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <div class="row mb-2">
@@ -75,7 +74,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary float-right">Simpan</button>
+            <button type="submit" class="btn btn-primary float-right">Update</button>
             <a href="<?= base_url('solar/peminjaman') ?>" class="btn btn-secondary float-left">Batal</a>
 
         </div>

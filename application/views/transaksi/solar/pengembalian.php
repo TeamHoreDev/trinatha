@@ -39,12 +39,11 @@
                             <thead>
                                 <tr>
                                     <th>Kode Transaksi</th>
-                                    <th>Vendor</th>
                                     <th>Tanggal</th>
-                                    <th>PIC</th>
+                                    <th>Vendor</th>
                                     <th>Qty Pengembalian</th>
-                                    <th>Tanki</th>
-                                    <th>Stok</th>
+                                    <th>Tangki</th>
+                                    <th>PIC</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
                             </thead>
@@ -52,12 +51,11 @@
                                 <?php foreach ($pengembalian5k as $key) : ?>
                                     <tr>
                                         <td><?= $key->kode_pengembalian ?></td>
-                                        <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->tanggal ?></td>
-                                        <td><?= $key->nama_user ?></td>
+                                        <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->solar_in ?>L</td>
                                         <td><?= $key->tangki ?>L</td>
-                                        <td><?= $key->stok ?></td>
+                                        <td><?= $key->nama_user ?></td>
                                         <td>
                                             <div class="btn-group">
                                                 <a href="<?= base_url('solar/edit_pengembalian/') . $key->id_pengembalian . '/' . $key->id_peminjaman  ?>"><button type="button" class="btn btn-default btn-sm" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>
@@ -81,12 +79,11 @@
                             <thead>
                                 <tr>
                                     <th>Kode Transaksi</th>
-                                    <th>Vendor</th>
                                     <th>Tanggal</th>
-                                    <th>PIC</th>
+                                    <th>Vendor</th>
                                     <th>Qty Pengembalian</th>
-                                    <th>Tanki</th>
-                                    <th>Stok</th>
+                                    <th>Tangki</th>
+                                    <th>PIC</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
                             </thead>
@@ -94,12 +91,11 @@
                                 <?php foreach ($pengembalian8k as $key) : ?>
                                     <tr>
                                         <td><?= $key->kode_pengembalian ?></td>
-                                        <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->tanggal ?></td>
-                                        <td><?= $key->nama_user ?></td>
+                                        <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->solar_in ?>L</td>
                                         <td><?= $key->tangki ?>L</td>
-                                        <td><?= $key->stok ?></td>
+                                        <td><?= $key->nama_user ?></td>
                                         <td>
                                             <div class="btn-group">
                                                 <a href="<?= base_url('solar/edit_pengembalian/') . $key->id_pengembalian . '/' . $key->id_peminjaman ?>"><button type="button" class="btn btn-default btn-sm" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>

@@ -40,13 +40,12 @@
                                 <tr>
                                     <th>Kode Transaksi</th>
                                     <th>Tanggal</th>
-                                    <th>PIC</th>
                                     <th>Nama Vendor</th>
                                     <th>Alat</th>
                                     <th>Quantity</th>
-                                    <th>Tanki</th>
+                                    <th>Tangki</th>
                                     <th>Status</th>
-                                    <th>Stok</th>
+                                    <th>PIC</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
                             </thead>
@@ -55,7 +54,6 @@
                                     <tr>
                                         <td><?= $key->kode_transaksi ?></td>
                                         <td><?= $key->tanggal ?></td>
-                                        <td><?= $key->nama_user ?></td>
                                         <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->nama_alat ?></td>
                                         <td><?= $key->solar_out ?>L</td>
@@ -68,7 +66,7 @@
                                                 echo '<span class="badge badge-success">sudah kembali</span>';
                                             }  ?>
                                         </td>
-                                        <td><?= $key->stok ?></td>
+                                        <td><?= $key->nama_user ?></td>
                                         <td>
                                             <div class="btn-group">
                                                 <a href="<?= base_url('solar/edit_peminjaman/') . $key->id_peminjaman ?>"><button type="button" class="btn btn-default btn-sm" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>
@@ -93,13 +91,12 @@
                                 <tr>
                                     <th>Kode Transaksi</th>
                                     <th>Tanggal</th>
-                                    <th>PIC</th>
                                     <th>Nama Vendor</th>
                                     <th>Alat</th>
                                     <th>Quantity</th>
-                                    <th>Tanki</th>
+                                    <th>Tangki</th>
                                     <th>Status</th>
-                                    <th>Stok</th>
+                                    <th>PIC</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
                             </thead>
@@ -108,7 +105,6 @@
                                     <tr>
                                         <td><?= $key->kode_transaksi ?></td>
                                         <td><?= $key->tanggal ?></td>
-                                        <td><?= $key->nama_user ?></td>
                                         <td><?= $key->nama_vendor ?></td>
                                         <td><?= $key->nama_alat ?></td>
                                         <td><?= $key->solar_out ?>L</td>
@@ -121,7 +117,8 @@
                                                 echo '<span class="badge badge-success">sudah kembali</span>';
                                             }  ?>
                                         </td>
-                                        <td><?= $key->stok ?></td>
+                                        <td><?= $key->nama_user ?></td>
+
                                         <td>
                                             <div class="btn-group">
                                                 <button type="button" class="btn btn-default btn-sm" onclick="deleteConfirm('<?= base_url() . 'solar/delete/' . $key->id_transaksi ?>')" data-tolltip="tooltip" data-placement="top" title="Delete"><i class="fas fa-trash-alt"></i></button>

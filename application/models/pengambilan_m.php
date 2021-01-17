@@ -9,6 +9,7 @@ class pengambilan_m extends CI_Model
     public $kode_transaksi;
     public $id_alat;
     public $id_user;
+    public $keterangan;
     public $jam;
 
     public function rules_pengambilan()
@@ -17,6 +18,11 @@ class pengambilan_m extends CI_Model
             [
                 'field' => 'falat',
                 'label' => 'Kode Alat',
+                'rules' => 'required'
+            ],
+            [
+                'field' => 'fketerangan',
+                'label' => 'Keterangan',
                 'rules' => 'required'
             ],
             [
@@ -85,6 +91,7 @@ class pengambilan_m extends CI_Model
         $this->kode_transaksi = $post['fkode_transaksi'];
         $this->id_alat = $post['falat'];
         $this->jam = $post['fjam'];
+        $this->keterangan = $post['fketerangan'];
         $this->id_user = $this->session->userdata('id_user');
         $this->db->insert($this->_table, $this);
     }
@@ -92,6 +99,7 @@ class pengambilan_m extends CI_Model
     {
         $post = $this->input->post();
         $this->db->set('id_alat', $post['falat']);
+        $this->db->set('keterangan', $post['fketerangan']);
         $this->db->set('id_user', $this->session->userdata('id_user'));
         $this->db->where('id_pengambilan', $id);
         $this->db->update($this->_table);

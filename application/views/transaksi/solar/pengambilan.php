@@ -40,12 +40,13 @@
                                 <tr>
                                     <th>Kode Transaksi</th>
                                     <th>Tanggal / Jam</th>
-                                    <th>PIC</th>
-                                    <th>Tangki</th>
+                                    <th>Kode Alat</th>
                                     <th>Nama Alat</th>
                                     <th>Operator</th>
                                     <th>Quantity</th>
-                                    <th>Stok</th>
+                                    <th>Tangki</th>
+                                    <th>Keterangan</th>
+                                    <th>PIC</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
                             </thead>
@@ -54,12 +55,13 @@
                                     <tr>
                                         <td><?= $key->kode_transaksi ?></td>
                                         <td><?= $key->tanggal . " / " . $key->jam ?></td>
-                                        <td><?= $key->nama_user ?></td>
-                                        <td><?= $key->tangki ?>L</td>
+                                        <td><?= $key->kode_alat ?></td>
                                         <td><?= $key->nama_alat ?></td>
                                         <td><?= $key->operator ?></td>
                                         <td><?= $key->solar_out ?></td>
-                                        <td><?= $key->stok ?>L</td>
+                                        <td><?= $key->tangki ?>L</td>
+                                        <td><?= $key->keterangan ?></td>
+                                        <td><?= $key->nama_user ?></td>
                                         <td>
                                             <div class="btn-group">
                                                 <a href="<?= base_url('solar/edit_pengambilan/') . $key->id_pengambilan ?>"><button type="button" class="btn btn-default btn-sm" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>
@@ -84,12 +86,12 @@
                                 <tr>
                                     <th>Kode Transaksi</th>
                                     <th>Tanggal / Jam</th>
-                                    <th>PIC</th>
-                                    <th>Tangki</th>
+                                    <th>Kode Alat</th>
                                     <th>Nama Alat</th>
                                     <th>Operator</th>
                                     <th>Quantity</th>
-                                    <th>Stok</th>
+                                    <th>Tangki</th>
+                                    <th>PIC</th>
                                     <th style="width: 10px">Modify</th>
                                 </tr>
                             </thead>
@@ -99,11 +101,12 @@
                                         <td><?= $key->kode_transaksi ?></td>
                                         <td><?= $key->tanggal . " / " . $key->jam ?></td>
                                         <td><?= $key->nama_user ?></td>
-                                        <td><?= $key->tangki ?>L</td>
+                                        <td><?= $key->kode_alat ?></td>
                                         <td><?= $key->nama_alat ?></td>
                                         <td><?= $key->operator ?></td>
                                         <td><?= $key->solar_out ?></td>
-                                        <td><?= $key->stok ?>L</td>
+                                        <td><?= $key->tangki ?>L</td>
+                                        <td><?= $key->nama_user ?>L</td>
                                         <td>
                                             <div class="btn-group">
                                                 <a href="<?= base_url('solar/edit_pengambilan/') . $key->id_pengambilan ?>"><button type="button" class="btn btn-default btn-sm" data-tolltip="tooltip" data-placement="top" <button type="button" class="btn btn-default btn-sm"><i class="fas fa-pencil-alt" data-tolltip="tooltip" data-placement="top" title="Edit"></i></button></a>

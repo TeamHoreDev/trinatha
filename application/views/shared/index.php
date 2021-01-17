@@ -114,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </ul>
             </li>
             <li class="nav-item has-treeview menu-close">
-              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'lap_jam_kerja_alat' ? 'active' : '' ?><?= $this->uri->segment(2) == 'stoksolar' ? 'active' : '' ?>">
+              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'laporan' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-print"></i>
                 <p>
                   Laporan
@@ -123,21 +123,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="<?= base_url('stoksolar') ?>" class="nav-link <?= $this->uri->segment(1) == 'stoksolar' ? 'active' : '' ?>">
+                  <a href="<?= base_url('laporan/penerimaan') ?>" class="nav-link ">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Penerimaan Solar</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('stoksolar') ?>" class="nav-link <?= $this->uri->segment(1) == 'stoksolar' ? 'active' : '' ?>">
+                  <a href="<?= base_url('laporan/pemakaian') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Pemakaian Solar</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="<?= base_url('lap_jam_kerja_alat') ?>" class="nav-link <?= $this->uri->segment(1) == 'lap_jam_kerja_alat' ? 'active' : '' ?>">
+                  <a href="<?= base_url('laporan/jam_kerja') ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Jam Kerja Alat</p>
+                    <p>Jam Kerja Alat Berat</p>
                   </a>
                 </li>
 
@@ -155,7 +155,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <li class="nav-item">
                   <a href="<?= base_url('alat') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'alat' ? 'active' : '' ?>">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Master Alat</p>
+                    <p>Master Alat Berat</p>
                   </a>
                 </li>
                 <li class="nav-item">
@@ -172,14 +172,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </li>
               </ul>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a href="<?= base_url('setting') ?>" class="nav-link <?= $this->uri->segment(1) == 'setting' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-user-cog"></i>
                 <p>
                   Setting
                 </p>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <hr>
             </li>

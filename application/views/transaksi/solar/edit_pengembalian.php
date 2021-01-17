@@ -69,7 +69,7 @@
                 </div>
                 <div class="form-group col-6">
                     <label for="fsolar_in">Quantity (Liter)</label>
-                    <input type="text" class="form-control <?= form_error('fsolar_in') ? 'is-invalid' : '' ?>" id="fsolar_in" name="fsolar_in" placeholder="Enter quantity" value="<?= $pengembalian->solar_in  ?>">
+                    <input type="text" class="form-control <?= form_error('fsolar_in') ? 'is-invalid' : '' ?>" id="fsolar_in" name="fsolar_in" placeholder="Enter quantity" value="<?= $pengembalian->solar_in  ?>" readonly>
                     <div class="invalid-feedback">
                         <?= form_error('fsolar_in') ?>
                     </div>
@@ -78,7 +78,7 @@
         </div>
         <!-- /.card-body -->
         <div class="card-footer">
-            <button type="submit" class="btn btn-primary float-right">Simpan</button>
+            <button type="submit" class="btn btn-primary float-right">Update</button>
             <a href="<?= base_url('solar/pengembalian') ?>" class="btn btn-secondary float-left">Batal</a>
         </div>
     </form>
