@@ -51,7 +51,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-primary float-right">Simpan</button>
+                    <button type="submit" class="btn btn-primary float-right">Update</button>
                     <a href="<?= base_url('alat') ?>" class="btn btn-secondary float-left">Batal</a>
                 </div>
             </form>

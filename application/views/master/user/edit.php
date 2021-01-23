@@ -67,10 +67,9 @@
                     <select class="form-control <?php echo form_error('frole') ? 'is-invalid' : '' ?>" id="frole" name="frole">
                         <?php $role = $this->input->post('frole') ? $this->input->post('frole') : $user->role  ?>
                         <option hidden value="" selected>Pilih frole</option>
-                        <option value="1" <?= $role == "1" ? "selected" : '' ?>>Sistem Admin</option>
-                        <option value="2" <?= $role == "2" ? "selected" : '' ?>>Admin Operasional</option>
-                        <option value="3" <?= $role == "3" ? "selected" : '' ?>>Fuelman</option>
-                        <option value="4" <?= $role == "4" ? "selected" : '' ?>>Supervisor</option>
+                        <option value="1" <?= $role == "1" ? "selected" : '' ?>>Admin Operasional</option>
+                        <option value="2" <?= $role == "2" ? "selected" : '' ?>>Fuelman</option>
+                        <option value="3" <?= $role == "3" ? "selected" : '' ?>>Supervisor</option>
                     </select>
                     <div class="invalid-feedback">
                         <?php echo form_error('frole') ?>
@@ -79,7 +78,9 @@
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary float-right">Daftar</button>
+                <button type="submit" class="btn btn-primary float-right">Update</button>
+                <a href="<?= base_url('user') ?>" class="btn btn-secondary float-left">Batal</a>
+
             </div>
         </form>
     </div>
