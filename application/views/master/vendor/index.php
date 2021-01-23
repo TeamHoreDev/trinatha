@@ -65,7 +65,6 @@
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                <small class="text-muted float-right">Data vendor pada tanggal 09/05/2020</small>
             </div>
         </div>
         <!-- /.card -->

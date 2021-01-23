@@ -38,7 +38,6 @@ class solar_m extends CI_Model
         $this->solar_in = $post['fsolar_in'];
         $this->solar_out = 0;
         $this->no_urut = $this->cek_kode_transaksi();
-        $this->stok = $this->get_stok($post['ftangki']) + $post['fsolar_in'];
         $this->deleted = 0;
         $this->db->insert($this->_table, $this);
     }
@@ -53,7 +52,6 @@ class solar_m extends CI_Model
         $this->solar_in = 0;
         $this->solar_out = $post['fsolar_out'];
         $this->no_urut = $this->cek_kode_transaksi();
-        $this->stok = $this->get_stok($post['ftangki']) - $post['fsolar_out'];
         $this->deleted = 0;
         $this->db->insert($this->_table, $this);
     }

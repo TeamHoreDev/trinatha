@@ -33,7 +33,7 @@
                             Preview laporan penerimaan solar tangki <?= $tangki ?> L pada tanggal <?= $tgl_awal ?> sampai <?= $tgl_akhir ?>, pilih <a href="<?= base_url('laporan/penerimaan') ?>">kembali</a> untuk merubah periode dan tangki.
                         </div>
                         <div class="col-md-2">
-                            <a href="<?= base_url('download/penerimaan/') . $tgl_awal . '/' . $tgl_akhir . '/' . $tangki ?>" target="_blank"><button class="btn btn-sm btn-default float-right"><i class="fa fa-download"></i> Download PDF</button> </a>
+                            <a href="<?= base_url('download/penerimaan/') . $tgl_awal . '/' . $tgl_akhir . '/' . $tangki . '/' . $vendor ?>" target="_blank"><button class="btn btn-sm btn-default float-right"><i class="fa fa-download"></i> Download PDF</button> </a>
                         </div>
                     </div>
 
@@ -49,8 +49,8 @@
                                 <th>Tanggal</th>
                                 <th>Kode Transaksi</th>
                                 <th>Vendor</th>
-                                <th>QTY</th>
                                 <th>Tangki</th>
+                                <th>QTY</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,10 +62,12 @@
                                     <td><?= $key->tanggal ?></td>
                                     <td><?= $key->kode_transaksi ?></td>
                                     <td><?= $key->nama_vendor ?></td>
-                                    <td><?= $key->solar_in ?></td>
                                     <td><?= $key->tangki ?></td>
+                                    <td><?= $key->solar_in ?></td>
                                 </tr>
                             <?php } ?>
+                            <td colspan="5" class="text-center"><strong>Total Penerimaan Solar</strong></td>
+                            <td><?= $total ?></td>
                         </tbody>
                     </table>
                 </div>

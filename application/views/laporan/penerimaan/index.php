@@ -33,6 +33,23 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
+                                        <label for="fvendor">Vendor</label>
+                                        <select class="form-control <?php echo form_error('fvendor') ? 'is-invalid' : '' ?>" id="fvendor" name="fvendor">
+                                            <option hidden value="" selected>Pilih Vendor</option>
+                                            <option value="all">Semua Vendor</option>
+                                            <?php foreach ($vendor as $key) { ?>
+                                                <option value=<?= $key->id_vendor ?>> <?= $key->nama_vendor ?></option>
+                                            <?php } ?>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            <?php echo form_error('fvendor') ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
                                         <label for="ftangki">Tangki</label>
                                         <select class="form-control <?php echo form_error('ftangki') ? 'is-invalid' : '' ?>" id="ftangki" name="ftangki">
                                             <option hidden value="" selected>Pilih Tangki</option>

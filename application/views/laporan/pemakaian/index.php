@@ -33,6 +33,23 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
+                                        <label for="falat">Alat</label>
+                                        <select class="form-control <?php echo form_error('falat') ? 'is-invalid' : '' ?>" id="falat" name="falat">
+                                            <option hidden value="" selected>Pilih Alat</option>
+                                            <option value="all">Semua alat</option>
+                                            <?php foreach ($alat as $key) { ?>
+                                                <option value=<?= $key->id_alat ?>><?= $key->kode_alat ?> - <?= $key->nama_alat ?></option>
+                                            <?php } ?>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            <?php echo form_error('falat') ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
                                         <label for="ftangki">Tangki</label>
                                         <select class="form-control <?php echo form_error('ftangki') ? 'is-invalid' : '' ?>" id="ftangki" name="ftangki">
                                             <option hidden value="" selected>Pilih Tangki</option>

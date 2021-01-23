@@ -78,100 +78,104 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </a>
             </li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'solar' ? 'active' : '' ?> <?= $this->uri->segment(1) == 'jam_kerja_alat' ? 'active' : '' ?>">
-                <i class="nav-icon fas fa-book"></i>
-                <p>
-                  Transaksi
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?= base_url('solar/penerimaan') ?>" class="nav-link <?= $this->uri->segment(2) == 'penerimaan' ? 'active' : '' ?>">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Penerimaan Solar</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('solar/pengambilan') ?>" class="nav-link <?= $this->uri->segment(2) == 'pengambilan' ? 'active' : '' ?>">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Pengambilan Solar</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('solar/peminjaman') ?>" class="nav-link <?= $this->uri->segment(2) == 'peminjaman' ? 'active' : '' ?>">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Peminjaman Solar</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('solar/pengembalian') ?>" class="nav-link <?= $this->uri->segment(2) == 'pengembalian' ? 'active' : '' ?>">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Pengembalian Solar</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item has-treeview menu-close">
-              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'laporan' ? 'active' : '' ?>">
-                <i class="nav-icon fas fa-print"></i>
-                <p>
-                  Laporan
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?= base_url('laporan/penerimaan') ?>" class="nav-link ">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Penerimaan Solar</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('laporan/pemakaian') ?>" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Pemakaian Solar</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('laporan/jam_kerja') ?>" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Jam Kerja Alat Berat</p>
-                  </a>
-                </li>
+            <?php if ($this->session->userdata('role') == 1 or $this->session->userdata('role') == 2) { ?>
 
-              </ul>
-            </li>
-            <li class="nav-item has-treeview">
-              <a href="#" class="nav-link <?= $this->uri->segment(1) == 'user' ? 'active' : '' ?><?= $this->uri->segment(1) == 'alat' ? 'active' : '' ?>">
-                <i class="nav-icon fas fa-database"></i>
-                <p>
-                  Data Master
-                  <i class="right fas fa-angle-left"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?= base_url('alat') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'alat' ? 'active' : '' ?>">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Master Alat Berat</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('user') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Master User</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?= base_url('vendor') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'vendor' ? 'active' : '' ?>">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Master Vendor</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link <?= $this->uri->segment(1) == 'solar' ? 'active' : '' ?> ">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>
+                    Transaksi
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <?php if ($this->session->userdata('role') == 1) { ?>
+                    <li class="nav-item">
+                      <a href="<?= base_url('solar/penerimaan') ?>" class="nav-link <?= $this->uri->segment(2) == 'penerimaan' ? 'active' : '' ?>">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Penerimaan Solar</p>
+                      </a>
+                    </li>
+                  <?php } ?>
+
+                  <li class="nav-item">
+                    <a href="<?= base_url('solar/pengambilan') ?>" class="nav-link <?= $this->uri->segment(2) == 'pengambilan' ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pengambilan Solar</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('solar/peminjaman') ?>" class="nav-link <?= $this->uri->segment(2) == 'peminjaman' ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Peminjaman Solar</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('solar/pengembalian') ?>" class="nav-link <?= $this->uri->segment(2) == 'pengembalian' ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pengembalian Solar</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            <?php } ?>
+            <?php if ($this->session->userdata('role') == 1 or $this->session->userdata('role') == 3) { ?>
+              <li class="nav-item has-treeview menu-close">
+                <a href="#" class="nav-link <?= $this->uri->segment(1) == 'laporan' ? 'active' : '' ?>">
+                  <i class="nav-icon fas fa-print"></i>
+                  <p>
+                    Laporan
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?= base_url('laporan/penerimaan') ?>" class="nav-link ">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Penerimaan Solar</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('laporan/pemakaian') ?>" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Pemakaian Solar</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            <?php } ?>
+            <?php if ($this->session->userdata('role') == 1) { ?>
+
+              <li class="nav-item has-treeview">
+                <a href="#" class="nav-link <?= $this->uri->segment(1) == 'user' ? 'active' : '' ?><?= $this->uri->segment(1) == 'alat' ? 'active' : '' ?>">
+                  <i class="nav-icon fas fa-database"></i>
+                  <p>
+                    Data Master
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?= base_url('alat') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'alat' ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Master Alat Berat</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('user') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'user' ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Master User</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?= base_url('vendor') ?>" class="nav-link <?php echo $this->uri->segment(1) == 'vendor' ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Master Vendor</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            <?php } ?>
             <!-- <li class="nav-item">
               <a href="<?= base_url('setting') ?>" class="nav-link <?= $this->uri->segment(1) == 'setting' ? 'active' : '' ?>">
                 <i class="nav-icon fas fa-user-cog"></i>

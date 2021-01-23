@@ -32,7 +32,7 @@
                             Preview laporan pemakaian solar tangki <?= $tangki ?> L pada tanggal <?= $tgl_awal ?> sampai <?= $tgl_akhir ?>pilih <a href="<?= base_url('laporan/penerimaan') ?>">kembali</a> untuk merubah periode dan tangki.
                         </div>
                         <div class="col-md-2">
-                            <a href="<?= base_url('download/pemakaian/') . $tgl_awal . '/' . $tgl_akhir . '/' . $tangki ?>" target="_blank"><button class="btn btn-sm btn-default float-right"><i class="fa fa-download"></i> Download PDF</button> </a>
+                            <a href="<?= base_url('download/pemakaian/') . $tgl_awal . '/' . $tgl_akhir . '/' . $tangki . '/' . $alat ?>" target="_blank"><button class="btn btn-sm btn-default float-right"><i class="fa fa-download"></i> Download PDF</button> </a>
                         </div>
                     </div>
                 </div>
@@ -47,9 +47,9 @@
                                 <th>Kode Alat</th>
                                 <th>Nama Alat</th>
                                 <th>Operator</th>
-                                <th>Qty</th>
-                                <th>Tangki</th>
                                 <th>Keterangan</th>
+                                <th>Tangki</th>
+                                <th>Qty</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,11 +64,15 @@
                                     <td><?= $key->kode_alat ?></td>
                                     <td><?= $key->nama_alat ?></td>
                                     <td><?= $key->operator ?></td>
-                                    <td><?= $key->solar_out ?></td>
-                                    <td><?= $key->tangki ?></td>
                                     <td><?= $key->keterangan ?></td>
+                                    <td><?= $key->tangki ?></td>
+                                    <td><?= $key->solar_out ?></td>
                                 </tr>
                             <?php } ?>
+                            <tr>
+                                <td colspan="9" class="text-center"><strong>Total Pemakaian Solar</strong></td>
+                                <td><?= $total ?></td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
