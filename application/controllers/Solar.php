@@ -62,7 +62,7 @@ class Solar extends CI_Controller
 		$validation->set_rules($penerimaan->rules_penerimaan());
 		if ($validation->run() == FALSE) {
 			$data['alat'] = $this->alat_m->get_all();
-			$data['kode'] = $this->solar_m->cek_kode_transaksi();
+			$data['kode'] = $this->penerimaan_m->cek_kode_transaksi();
 			$data['vendor'] = $this->vendor_m->get_all();
 			$data['stok_5000'] = $this->solar_m->get_stok('5000');
 			$data['stok_8000'] = $this->solar_m->get_stok('8000');
@@ -127,7 +127,7 @@ class Solar extends CI_Controller
 		$validation->set_rules($pengambilan->rules_pengambilan());
 		if ($validation->run() == FALSE) {
 			$data['alat'] = $this->alat_m->get_all();
-			$data['kode'] = $this->solar_m->cek_kode_transaksi();
+			$data['kode'] = $this->pengambilan_m->cek_kode_transaksi();
 			$data['vendor'] = $this->vendor_m->get_all();
 			$data['stok_5000'] = $this->solar_m->get_stok('5000');
 			$data['stok_8000'] = $this->solar_m->get_stok('8000');
@@ -194,7 +194,7 @@ class Solar extends CI_Controller
 		$validation->set_rules($peminjaman->rules_edit_peminjaman());
 		if ($validation->run() == FALSE) {
 			$data['alat'] = $this->alat_m->get_all();
-			$data['kode'] = $this->solar_m->cek_kode_transaksi();
+			$data['kode'] = $this->peminjaman_m->cek_kode_transaksi();
 			$data['vendor'] = $this->vendor_m->get_all();
 			$data['stok_5000'] = $this->solar_m->get_stok('5000');
 			$data['stok_8000'] = $this->solar_m->get_stok('8000');
@@ -266,7 +266,7 @@ class Solar extends CI_Controller
 		$validation->set_rules($pengembalian->rules_pengembalian());
 		if ($validation->run() == FALSE) {
 			$data['alat'] = $this->alat_m->get_all();
-			$data['kode'] = $this->solar_m->cek_kode_transaksi();
+			$data['kode'] = $this->pengembalian_m->cek_kode_transaksi();
 			$data['vendor'] = $this->vendor_m->get_all();
 			$data['stok_5000'] = $this->solar_m->get_stok('5000');
 			$data['stok_8000'] = $this->solar_m->get_stok('8000');
