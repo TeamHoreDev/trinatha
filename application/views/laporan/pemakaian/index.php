@@ -53,6 +53,7 @@
                                         <label for="ftangki">Tangki</label>
                                         <select class="form-control <?php echo form_error('ftangki') ? 'is-invalid' : '' ?>" id="ftangki" name="ftangki">
                                             <option hidden value="" selected>Pilih Tangki</option>
+                                            <option value="all">Semua Tangki</option>
                                             <option value="5000">5000 L</option>
                                             <option value="8000">8000 L</option>
                                         </select>

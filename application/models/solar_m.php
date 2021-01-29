@@ -37,7 +37,6 @@ class solar_m extends CI_Model
         $this->tangki = $post['ftangki'];
         $this->solar_in = $post['fsolar_in'];
         $this->solar_out = 0;
-        $this->no_urut = $this->cek_kode_transaksi();
         $this->deleted = 0;
         $this->db->insert($this->_table, $this);
     }
@@ -51,7 +50,6 @@ class solar_m extends CI_Model
         $this->tangki = $post['ftangki'];
         $this->solar_in = 0;
         $this->solar_out = $post['fsolar_out'];
-        $this->no_urut = $this->cek_kode_transaksi();
         $this->deleted = 0;
         $this->db->insert($this->_table, $this);
     }
@@ -84,15 +82,6 @@ class solar_m extends CI_Model
         $this->id_alat = $post['fid_alat'];
         $this->deleted = 0;
         $this->db->update($this->_table, $this, array('id_alat' => $post['fid_alat']));
-    }
-    public function cek_kode_transaksi()
-    {
-        $query = $this->db->query("SELECT MAX(no_urut) as kode from solar");
-        $hasil = $query->row();
-        $kode = $hasil->kode;
-        // contoh JRD0004, angka 3 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
-        $newkode = $kode + 1;
-        return $newkode;
     }
     public function get_stok($tangki)
     {

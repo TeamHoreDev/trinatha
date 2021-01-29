@@ -77,13 +77,22 @@ class pengembalian_m extends CI_Model
         $this->id_peminjaman = $post['fid_peminjaman'];
         $this->kode_transaksi = $post['fkode_transaksi'];
         $this->id_user = $this->session->userdata('id_user');
+        $this->no_urut = $this->cek_kode_transaksi();
         $this->db->insert($this->_table, $this);
     }
-
     public function Delete($id)
     {
         $this->db->where('id_pe', $id);
         $this->db->delete($this->_table);
+    }
+    public function cek_kode_transaksi()
+    {
+        $query = $this->db->query("SELECT MAX(no_urut) as kode from pengembalian");
+        $hasil = $query->row();
+        $kode = $hasil->kode;
+        // contoh JRD0004, angka 3 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
+        $newkode = $kode + 1;
+        return $newkode;
     }
 }
 

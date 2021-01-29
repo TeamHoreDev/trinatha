@@ -128,6 +128,8 @@ class peminjaman_m extends CI_Model
         $this->id_alat = $post['falat'];
         $this->id_user = $this->session->userdata('id_user');
         $this->status = 0;
+        $this->no_urut = $this->cek_kode_transaksi();
+
         $this->db->insert($this->_table, $this);
     }
     public function edit_peminjaman($id)
@@ -155,6 +157,15 @@ class peminjaman_m extends CI_Model
         $this->db->set('deleted', 1);
         $this->db->where('id_alat', $id);
         $this->db->update($this->_table);
+    }
+    public function cek_kode_transaksi()
+    {
+        $query = $this->db->query("SELECT MAX(no_urut) as kode from peminjaman");
+        $hasil = $query->row();
+        $kode = $hasil->kode;
+        // contoh JRD0004, angka 3 adalah awal pengambilan angka, dan 4 jumlah angka yang diambil
+        $newkode = $kode + 1;
+        return $newkode;
     }
 }
 
