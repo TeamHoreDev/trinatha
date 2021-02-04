@@ -75,7 +75,7 @@
                 </div>
                 <div class="form-group col-6">
                     <label for="fketerangan">Keterangan</label>
-                    <textarea type="text" class="form-control <?= form_error('fketerangan') ? 'is-invalid' : '' ?>" id="fketerangan" name="fketerangan" placeholder="Enter keterangan" value="<?= $this->input->post('fketerangan'); ?>"></textarea>
+                    <textarea type="text" class="form-control <?= form_error('fketerangan') ? 'is-invalid' : '' ?>" id="fketerangan" name="fketerangan" placeholder="Enter keterangan" value="<?= $this->input->post('fketerangan'); ?>"><?= $this->input->post('fketerangan') ?></textarea>
                     <div class="invalid-feedback">
                         <?= form_error('fketerangan') ?>
                     </div>

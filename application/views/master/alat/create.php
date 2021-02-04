@@ -28,21 +28,21 @@
                 <div class="card-body">
                     <div class="form-group">
                         <label for="fkode_alat">Kode Alat</label>
-                        <input type="text" class="form-control <?= form_error('fkode_alat') ? 'is-invalid' : '' ?>" id="fkode_alat" name="fkode_alat" placeholder="Enter Kode Alat">
+                        <input type="text" class="form-control <?= form_error('fkode_alat') ? 'is-invalid' : '' ?>" id="fkode_alat" name="fkode_alat" placeholder="Enter Kode Alat" value="<?= $this->input->post('fkode_alat'); ?>">
                         <div class="invalid-feedback">
                             <?= form_error('fkode_alat') ?>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="fnama_alat">Nama Alat</label>
-                        <input type="text" class="form-control <?= form_error('fnama_alat') ? 'is-invalid' : '' ?>" id="fnama_alat" name="fnama_alat" placeholder="Enter Nama Alat">
+                        <input type="text" class="form-control <?= form_error('fnama_alat') ? 'is-invalid' : '' ?>" id="fnama_alat" name="fnama_alat" placeholder="Enter Nama Alat" value="<?= $this->input->post('fnama_alat'); ?>">
                         <div class="invalid-feedback">
                             <?= form_error('fnama_alat') ?>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="foperator">Nama Operator</label>
-                        <input type="text" class="form-control <?= form_error('foperator') ? 'is-invalid' : '' ?>" id="foperator" name="foperator" placeholder="Enter Nama Alat">
+                        <input type="text" class="form-control <?= form_error('foperator') ? 'is-invalid' : '' ?>" id="foperator" name="foperator" placeholder="Enter Nama Alat" value="<?= $this->input->post('foperator'); ?>">
                         <div class="invalid-feedback">
                             <?= form_error('foperator') ?>
                         </div>

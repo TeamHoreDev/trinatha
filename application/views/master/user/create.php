@@ -70,10 +70,10 @@
                 <div class="form-group">
                     <label for="frole">Role</label>
                     <select class="form-control <?php echo form_error('frole') ? 'is-invalid' : '' ?>" id="frole" name="frole">
-                        <option hidden value="" selected>Pilih frole</option>
-                        <option value="1">Admin Operasional</option>
-                        <option value="2">Fuelman</option>
-                        <option value="3">Supervisor</option>
+                        <option hidden value="" selected>Pilih Role</option>
+                        <option value="1" <?= $this->input->post('frole') == "1" ? 'selected' : '' ?>>Admin Operasional</option>
+                        <option value="2" <?= $this->input->post('frole') == "2" ? 'selected' : '' ?>>Fuelman</option>
+                        <option value="3" <?= $this->input->post('frole') == "3" ? 'selected' : '' ?>>Supervisor</option>
                     </select>
                     <div class="invalid-feedback">
                         <?php echo form_error('frole') ?>
@@ -82,7 +82,7 @@
             </div>
             <!-- /.card-body -->
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary float-right">Daftar</button>
+                <button type="submit" class="btn btn-primary float-right">Simpan</button>
                 <a href="<?= base_url('user') ?>" class="btn btn-secondary float-left">Batal</a>
             </div>
         </form>

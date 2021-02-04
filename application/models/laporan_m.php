@@ -107,7 +107,9 @@ class laporan_m extends CI_Model
         $this->db->from($this->_table);
         $this->db->join('penerimaan', 'penerimaan.kode_transaksi = solar.kode_transaksi', 'left');
         $this->db->join('vendor', 'vendor.id_vendor = penerimaan.id_vendor', 'left');
-        $this->db->where('solar.tangki', $tangki);
+        if ($tangki != 'all') {
+            $this->db->where('solar.tangki', $tangki);
+        }
         $this->db->where('solar.tanggal >=', $tgl_awal);
         $this->db->where('solar.tanggal <=', $tgl_akhir);
         if ($vendor != 'all') {
@@ -128,7 +130,9 @@ class laporan_m extends CI_Model
         if ($alat != 'all') {
             $this->db->where('pengambilan.id_alat', $alat);
         }
-        $this->db->where('solar.tangki', $tangki);
+        if ($tangki != 'all') {
+            $this->db->where('solar.tangki', $tangki);
+        }
         $this->db->where('solar.tanggal >=', $tgl_awal);
         $this->db->where('solar.tanggal <=', $tgl_akhir);
         $this->db->where('solar.jenis_transaksi', 'pengambilan');

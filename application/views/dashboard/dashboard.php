@@ -30,7 +30,7 @@
                       <div class="col-3">
                         <div class="progress vertical" style="width: 100px">
                           <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" aria-valuenow="<?= $stok_5000 ?>" aria-valuemin="0" aria-valuemax="5000" style="height: <?= $stok_5000 / 5000 * 100 ?>%">
-                            <h5><?= $stok_5000 / 5000 * 100 ?>%</h5>
+                            <h5><?= floor($stok_5000 / 5000 * 100) ?>%</h5>
 
                             <span class="sr-only">40%</span>
                           </div>
@@ -63,7 +63,7 @@
                       <div class="col-3">
                         <div class="progress vertical" style="width: 100px">
                           <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" aria-valuenow="<?= $stok_8000 ?>" aria-valuemin="0" aria-valuemax="8000" style="height: <?= $stok_8000 / 8000 * 100 ?>%">
-                            <h5><?= $stok_8000 / 8000 * 100 ?>%</h5>
+                            <h5><?= floor($stok_8000 / 8000 * 100) ?>%</h5>
                             <span class="sr-only"><?= $stok_8000 / 8000 * 100 ?>%</span>
                           </div>
                         </div>
